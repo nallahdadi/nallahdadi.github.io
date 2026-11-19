@@ -1,0 +1,83 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 4627 >>
+stream
+0.055 0.058 0.069 rg 0 725 595 117 re f
+0.98 0.49 0.12 rg BT /F2 22 Tf 1 0 0 1 46 794 Tm (NASSER ALLAHDADI) Tj ET
+1 1 1 rg BT /F2 12 Tf 1 0 0 1 46 771 Tm (SOFTWARE ARCHITECT & TECHNICAL LEAD) Tj ET
+0.81 0.82 0.85 rg BT /F1 9 Tf 1 0 0 1 46 748 Tm (Java / Spring Boot  |  C++ / Qt  |  Banking & Payment Systems) Tj ET
+0.91 0.42 0.09 rg BT /F2 10 Tf 1 0 0 1 46 733 Tm (PROFILE) Tj ET
+0.82 0.82 0.84 RG 0.6 w 46 726 m 549 726 l S
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 706 Tm (Software engineer and technical lead with 14+ years in banking, payment processing, network software) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 693 Tm (and enterprise back-office systems. Specialized in pragmatic hybrid architecture, legacy integration) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 680 Tm (and performance diagnostics.) Tj ET
+0.91 0.42 0.09 rg BT /F2 10 Tf 1 0 0 1 46 657 Tm (SELECTED WORK) Tj ET
+0.82 0.82 0.84 RG 0.6 w 46 650 m 549 650 l S
+0.22 0.22 0.24 rg BT /F2 9.6 Tf 1 0 0 1 46 630 Tm (Banking Switch Back-Office Platform) Tj ET
+0.4 0.4 0.43 rg BT /F1 8 Tf 1 0 0 1 435 630 Tm (TOSAN) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 614 Tm (Led architecture and implementation of a Java / Spring Boot hybrid platform deployed across 5+ banking) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 601 Tm (environments. Designed Oracle / JPA domain models, multiple data sources, Kafka transaction events and audit) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 588 Tm (logging during backup restore; guided 1-3 engineers.) Tj ET
+0.22 0.22 0.24 rg BT /F2 9.6 Tf 1 0 0 1 46 567 Tm (Payment Switch Modernization) Tj ET
+0.4 0.4 0.43 rg BT /F1 8 Tf 1 0 0 1 435 567 Tm (INFOTECH) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 551 Tm (Modernized switch-module communication from pipes to TCP sockets / ISO 8583, enabling distributed) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 538 Tm (deployments. Added bill inquiry and payment integration with duplicate-payment controls.) Tj ET
+0.22 0.22 0.24 rg BT /F2 9.6 Tf 1 0 0 1 46 517 Tm (ATM Diagnostics & Visual Log Analysis) Tj ET
+0.4 0.4 0.43 rg BT /F1 8 Tf 1 0 0 1 435 517 Tm (TOSAN) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 501 Tm (Built Qt-based graphical log analysis with ATM state changes and RAM / CPU charts. Used Valgrind and Visual) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 488 Tm (Studio diagnostics to investigate C++ memory leaks.) Tj ET
+0.91 0.42 0.09 rg BT /F2 10 Tf 1 0 0 1 46 465 Tm (EXPERIENCE) Tj ET
+0.82 0.82 0.84 RG 0.6 w 46 458 m 549 458 l S
+0.22 0.22 0.24 rg BT /F2 9.6 Tf 1 0 0 1 46 438 Tm (TOSAN) Tj ET
+0.4 0.4 0.43 rg BT /F1 8 Tf 1 0 0 1 435 438 Tm (Nov 2017 - Present) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 422 Tm (Software engineering, architecture and technical leadership. Role progression reflects responsibilities;) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 409 Tm (exact promotion dates not confirmed.) Tj ET
+0.22 0.22 0.24 rg BT /F2 9.6 Tf 1 0 0 1 46 388 Tm (Infotech International Group) Tj ET
+0.4 0.4 0.43 rg BT /F1 8 Tf 1 0 0 1 435 388 Tm (Feb - Nov 2017) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 372 Tm (C++ payment-switch development, Oracle / Pro*C, TCP/IP and ISO 8583.) Tj ET
+0.22 0.22 0.24 rg BT /F2 9.6 Tf 1 0 0 1 46 351 Tm (Intelligence Processing) Tj ET
+0.4 0.4 0.43 rg BT /F1 8 Tf 1 0 0 1 435 351 Tm (Aug 2012 - Feb 2017) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 335 Tm (Software Developer / Team Lead; secure networking, multithreading, protocol analysis and cryptography.) Tj ET
+0.91 0.42 0.09 rg BT /F2 10 Tf 1 0 0 1 46 312 Tm (EXPERTISE) Tj ET
+0.82 0.82 0.84 RG 0.6 w 46 305 m 549 305 l S
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 285 Tm (Architecture: Hybrid, Modular Monolith, Microservices, DDD, Event-Driven. Java: Spring Boot, JPA /) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 272 Tm (Hibernate, Oracle, Kafka, REST. Systems: C++, Qt, TCP/IP, ISO 8583, Concurrency, Valgrind.) Tj ET
+0.91 0.42 0.09 rg BT /F2 10 Tf 1 0 0 1 46 249 Tm (EDUCATION) Tj ET
+0.82 0.82 0.84 RG 0.6 w 46 242 m 549 242 l S
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 222 Tm (MSc Computer Engineering - Science and Research Branch \(2016-2018\). BSc Computer Engineering - Hamadan) Tj ET
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 209 Tm (University of Technology \(2007-2012\).) Tj ET
+0.91 0.42 0.09 rg BT /F2 10 Tf 1 0 0 1 46 186 Tm (CONTACT) Tj ET
+0.82 0.82 0.84 RG 0.6 w 46 179 m 549 179 l S
+0.33 0.34 0.37 rg BT /F1 9 Tf 1 0 0 1 46 159 Tm (n.allahdadi@outlook.com | github.com/nallahdadi | linkedin.com/in/nallahdadi) Tj ET
+0.52 0.53 0.56 rg BT /F1 7 Tf 1 0 0 1 46 28 Tm (Concise professional resume | 2026) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000000396 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+5074
+%%EOF
