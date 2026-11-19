@@ -3,13 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nasser Allahdadi — Software Engineer</title>
-<meta name="description" content="Nasser Allahdadi — Senior Java Backend Developer specializing in microservices, event-driven systems, and applied AI / LLM automation.">
+<title>Nasser Allahdadi — Software Architect &amp; Technical Lead</title>
+<meta name="description" content="Nasser Allahdadi — Software Architect & Technical Lead specializing in banking systems, payment processing, Java, Spring Boot and C++ engineering.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0b0f'/%3E%3Ctext x='50' y='68' font-size='55' font-family='Arial,Helvetica,sans-serif' font-weight='bold' fill='%23ff7a1a' text-anchor='middle'%3ENA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+ .career-stage{margin:18px 0 22px;border-left:2px solid var(--orange);padding-left:18px}
+ .career-stage strong{display:block;margin-bottom:12px;color:var(--orange-light)}
+ .career-note{font-size:.8rem;color:var(--text-dim);margin:12px 0 20px}
+ .case-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+ .case-card{border:1px solid var(--card-border);background:var(--card);border-radius:16px;padding:26px;transition:border-color .25s,transform .25s}
+ .case-card:hover{border-color:var(--orange);transform:translateY(-4px)}
+ .case-kicker{display:block;color:var(--orange-light);font-size:.73rem;font-weight:700;letter-spacing:.08em;margin-bottom:16px}
+ .case-card h3{font-size:1.12rem;line-height:1.35;margin-bottom:14px}.case-card p{color:var(--text-dim);font-size:.92rem}
+ html[dir="rtl"] .career-stage{border-left:0;border-right:2px solid var(--orange);padding-left:0;padding-right:18px}
+ @media(max-width:880px){.case-grid{grid-template-columns:1fr}}
+ 
   :root{
     --bg: #0a0a0d;
     --bg-soft: #111116;
@@ -341,7 +352,8 @@
     <a href="#home" class="brand">Nasser<span class="dot">.</span>Allahdadi</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about" class="i18n" data-fa="درباره من">About</a></li>
-      <li><a href="#experience" class="i18n" data-fa="تجربه">Experience</a></li>
+      <li><a href="#experience" class="i18n" data-fa="تجربه">Experience</a>
+      <a href="#cases" class="i18n" data-fa="پروژه‌ها">Case Studies</a></li>
       <li><a href="#skills" class="i18n" data-fa="مهارت‌ها">Skills</a></li>
       <li><a href="#focus" class="i18n" data-fa="تمرکز">Focus</a></li>
       <li><a href="#education" class="i18n" data-fa="تحصیلات">Education</a></li>
@@ -356,116 +368,33 @@
 </header>
 
 <section class="hero" id="home">
-  <canvas id="particles"></canvas>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="eyebrow"><span class="pulse"></span> <span class="i18n" data-fa="آماده برای فرصت‌های جدید">Open to new opportunities</span></div>
-    <h1 class="i18n" data-fa='سلام، من <span class="highlight">ناصر الله‌دادی</span> هستم'>Hi, I'm <span class="highlight">Nasser Allahdadi</span></h1>
-    <p class="role i18n" data-fa='مهندس ارشد بک‌اند <span>جاوا و اسپرینگ بوت</span> با تمرکز بر توسعه‌ی میکروسرویس برای پلتفرم‌های بانکی پرتراکنش — با پیشینه‌ای قوی در برنامه‌نویسی سیستمی <span>++C/C</span>.'>Senior <span>Java &amp; Spring Boot</span> backend engineer building microservices for high‑volume banking platforms — with a strong background in <span>C/C++</span> systems programming.</p>
-    <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary i18n" data-fa="در تماس باشید">Get in touch</a>
-      <a href="#experience" class="btn btn-ghost i18n" data-fa="مشاهده‌ی تجربه‌ها">View experience</a>
-    </div>
-  </div>
-  <div class="scroll-cue"><span class="i18n" data-fa="اسکرول">Scroll</span><span class="line"></span></div>
+ <canvas id="particles"></canvas><div class="hero-glow"></div>
+ <div class="hero-content"><div class="eyebrow"><span class="pulse"></span><span class="i18n" data-fa="معماری نرم‌افزار · راهبری فنی">Software Architecture · Technical Leadership</span></div>
+ <h1 class="i18n" data-fa='من ناصر الله‌دادی هستم؛ <span class="highlight">معمار نرم‌افزار و راهبر فنی</span>'>Nasser Allahdadi — <span class="highlight">Software Architect &amp; Technical Lead</span></h1>
+ <p class="role i18n" data-fa="طراحی و توسعه سامانه‌های پیچیده و قابل اتکای بانکداری، سوئیچ پرداخت و نرم‌افزارهای سازمانی با جاوا، اسپرینگ بوت و ++C.">Building reliable banking, payment and enterprise systems with Java, Spring Boot and C++ — from distributed switch communications to hybrid back-office architecture.</p>
+ <div class="hero-cta"><a href="#cases" class="btn btn-primary i18n" data-fa="مطالعات موردی مهندسی">Engineering case studies</a><a href="#contact" class="btn btn-ghost i18n" data-fa="ارتباط با من">Get in touch</a></div></div>
+ <div class="scroll-cue"><span class="i18n" data-fa="اسکرول">Scroll</span><span class="line"></span></div>
 </section>
-
-<section id="about">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-tag i18n" data-fa="درباره‌ی من">About Me</span>
-      <h2 class="section-title i18n" data-fa="۱۴ سال تجربه در تبدیل سیستم‌های پیچیده به نرم‌افزارهای قابل‌اعتماد">14 years turning complex systems into reliable software</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p class="i18n" data-fa='من یک <strong>مهندس نرم‌افزار بک‌اند مستقر در تهران، ایران</strong> هستم با ۱۴ سال تجربه در حوزه‌ی بانکداری، پرداخت و نرم‌افزارهای شبکه. بیش از ۷ سال است که در <strong>توسن</strong> (توسعه راه‌کارهای نرم‌افزاری نگین)، بزرگ‌ترین ارائه‌دهنده‌ی خدمات پرداخت ایران، تمرکز اصلی‌ام طراحی و نگهداری <strong>ساب‌سیستم‌های بک‌اند جاوا برای بک‌آفیس سوییچ بانکی</strong> بوده است.'>I'm a <strong>backend software engineer based in Tehran, Iran</strong>, with 14 years of experience across banking, payments, and network software. For the past 7+ years at <strong>TOSAN</strong>, Iran's largest payment service provider, my core focus has been designing and maintaining <strong>Java backend subsystems for the bank's switch back office</strong>.</p>
-        <p class="i18n" data-fa='استک اصلی روزانه‌ام حول <strong>اکوسیستم جاوا: Spring، Spring Boot و JPA</strong> است. چندین ساب‌سیستم جاوایی با تعداد زیادی سرویس‌کال پیاده‌سازی و نگهداری کرده‌ام که نیازمند کار مستمر با <strong>مدیریت entity و دیتاسورس در JPA، joinهای پیچیده و دیتابیس Oracle</strong> بوده، در کنار <strong>concurrency و multi-threading در جاوا</strong> و طراحی بک‌اند با نگاه به موضوعات امنیتی.'>Day to day, my stack centers on the <strong>Java ecosystem: Spring, Spring Boot, and JPA</strong>. I've built and maintained several Java subsystems with numerous internal service calls, working continuously with <strong>JPA entity &amp; datasource management, complex joins, and Oracle databases</strong>, alongside <strong>Java concurrency and multi‑threading</strong> and security‑aware backend design.</p>
-        <p class="i18n" data-fa='در سال‌های ابتدایی‌تر کارم — حدود ۶ تا ۷ سال پیش — به‌طور جدی درگیر <strong>برنامه‌نویسی ATM و توسعه با C/C++</strong> بر پایه‌ی استاندارد <strong>WOSA/XFS</strong> با فریم‌ورک <strong>Qt</strong> بودم. این تخصص هنوز هم قوی است، هرچند امروز نقش کم‌رنگ‌تری نسبت به کار جاوا/اسپرینگم دارد. همچنین با <strong>Kafka و معماری‌های event-driven</strong> و <strong>یادگیری ماشین کلاسیک</strong> آشنایی کاری (متوسط) دارم. جدا از کار اصلی، به‌صورت خودآموز روی توسعه‌ی مدرن جاوااسکریپت هم کار می‌کنم؛ یک پروژه‌ی شخصی با <strong>Node.js، Next.js و Prisma</strong>.'>Earlier in my career — roughly 6–7 years ago — I was deeply involved in <strong>ATM programming and C/C++</strong> development on the <strong>WOSA/XFS</strong> standard using the <strong>Qt framework</strong>. That expertise is still solid, though today it plays a smaller role than my Java/Spring work. I also have working familiarity with <strong>Kafka &amp; event‑driven architectures</strong> and <strong>classical machine learning</strong>. Outside of work, I've been learning modern JS full‑stack development through a self‑taught side project with <strong>Node.js, Next.js, and Prisma</strong>.</p>
-      </div>
-      <div class="stats reveal">
-        <div class="stat-card"><div class="num">14+</div><div class="label i18n" data-fa="سال تجربه">Years of experience</div></div>
-        <div class="stat-card"><div class="num">3</div><div class="label i18n" data-fa="شرکت · بانکی و فین‌تک">Companies · Banking &amp; Fintech</div></div>
-        <div class="stat-card"><div class="num">10+</div><div class="label i18n" data-fa="زبان و فریم‌ورک">Languages &amp; frameworks</div></div>
-        <div class="stat-card"><div class="num i18n" data-fa="ارشد">MSc</div><div class="label i18n" data-fa="مهندسی کامپیوتر">Computer Engineering</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-tag i18n" data-fa="مسیر شغلی">Career Path</span>
-      <h2 class="section-title i18n" data-fa="سوابق کاری">Work Experience</h2>
-      <p class="section-desc i18n" data-fa="مسیری از سیستم‌های بک‌اند جاوا، نرم‌افزارهای بانکی و مهندسی شبکه‌ی امن.">A journey through Java backend systems, banking software, and secure network engineering.</p>
-    </div>
-
-    <div class="timeline">
-
-      <div class="tl-item current reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div class="tl-role i18n" data-fa="توسعه‌دهنده نرم‌افزار">Software Developer</div>
-            <div class="tl-period i18n" data-fa="نوامبر ۲۰۱۷ — اکنون">Nov 2017 — Present</div>
-          </div>
-          <div class="tl-company i18n" data-fa='<span>توسن</span> · تهران، ایران — بزرگ‌ترین ارائه‌دهنده‌ی خدمات پرداخت (PSP) ایران'><span>TOSAN</span> · Tehran, Iran — largest Payment Service Provider (PSP) in Iran</div>
-          <ul class="tl-list">
-            <li class="i18n" data-fa="طراحی و نگهداری ساب‌سیستم‌های بک‌اند جاوا برای بک‌آفیس سوییچ بانکی، با کار گسترده روی JPA و Oracle — مدل‌سازی entity، joinهای پیچیده و مدیریت دیتاسورس.">Design and maintain Java backend subsystems for the bank's switch back office, with extensive JPA / Oracle work — entity modeling, complex joins, and datasource management.</li>
-            <li class="i18n" data-fa="استفاده از concurrency و multi-threading در جاوا برای پایداری سرویس‌های تراکنشی پرحجم.">Apply Java concurrency and multi‑threading to keep high‑volume transaction services reliable.</li>
-            <li class="i18n" data-fa="مشارکت در روند مدرن‌سازی به سمت میکروسرویس‌های Spring Boot و الگوهای event-driven مبتنی بر Kafka؛ آشنایی با اتوماسیون n8n و ابزارهای مبتنی بر LLM.">Contribute to modernization efforts toward Spring Boot microservices and Kafka‑based event‑driven patterns; explore n8n workflow automation and LLM‑assisted tooling.</li>
-            <li class="i18n" data-fa="نگهداری نرم‌افزار ATM مبتنی بر استاندارد WOSA/XFS، شامل پردازش تراکنش و پرداخت بر پایه‌ی ISO 8583.">Maintain ATM software built on the WOSA/XFS standard, handling ISO 8583 transaction &amp; payment processing.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Java</span><span class="tag">Spring / Spring Boot</span><span class="tag">JPA</span>
-            <span class="tag">Oracle</span><span class="tag">Concurrency</span><span class="tag">C/C++ · Qt</span>
-            <span class="tag">ISO 8583</span><span class="tag">WOSA/XFS</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div class="tl-role i18n" data-fa="توسعه‌دهنده نرم‌افزار">Software Developer</div>
-            <div class="tl-period i18n" data-fa="فوریه ۲۰۱۷ — نوامبر ۲۰۱۷">Feb 2017 — Nov 2017</div>
-          </div>
-          <div class="tl-company i18n" data-fa='<span>Infotech International Group</span> · تهران، ایران — پارتنر رسمی Ingenico'><span>Infotech International Group</span> · Tehran, Iran — official Ingenico partner</div>
-          <ul class="tl-list">
-            <li class="i18n" data-fa="توسعه و رفع اشکال نرم‌افزار سوییچ S2M، یک سوییچ پرداخت مبتنی بر استاندارد ISO 8583.">Developed and fixed the S2M Switch software, a payment switch built on the ISO 8583 standard.</li>
-            <li class="i18n" data-fa="کار با Oracle / PL/SQL، اسکریپت‌نویسی شل لینوکس و برنامه‌نویسی شبکه در سطح ساکت.">Worked with Oracle / PL/SQL, Linux shell scripting, and socket‑level network programming.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">C/C++</span><span class="tag">Java</span><span class="tag">PL/SQL</span>
-            <span class="tag">ISO 8583</span><span class="tag">Linux</span><span class="tag">Docker</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div class="tl-role i18n" data-fa="توسعه‌دهنده نرم‌افزار — سرتیم">Software Developer — Team Lead</div>
-            <div class="tl-period i18n" data-fa="اوت ۲۰۱۲ — فوریه ۲۰۱۷">Aug 2012 — Feb 2017</div>
-          </div>
-          <div class="tl-company i18n" data-fa='<span>Intelligence Processing</span> · تهران، ایران — راهکارهای شبکه'><span>Intelligence Processing</span> · Tehran, Iran — network solutions</div>
-          <ul class="tl-list">
-            <li class="i18n" data-fa="سرپرستی تیم توسعه و تیم تخصصی Secure Connections.">Led the development team and the Secure Connections specialist team.</li>
-            <li class="i18n" data-fa="توسعه‌ی نرم‌افزارهای مبتنی بر شبکه شامل رمزنگاری، تحلیل پروتکل و برنامه‌نویسی سیستمی چندنخی.">Built network‑based software covering cryptography, protocol analysis, and multi‑threaded system programming.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">C/C++ · Qt</span><span class="tag">C#</span><span class="tag">Python</span>
-            <span class="tag">Cryptography</span><span class="tag">Network Programming</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+<section id="about"><div class="container">
+ <div class="section-head reveal"><span class="section-tag i18n" data-fa="درباره من">About Me</span><h2 class="section-title i18n" data-fa="معماری مبتنی بر محدودیت‌های واقعی سیستم‌های عملیاتی">Architecture grounded in production realities</h2></div>
+ <div class="about-grid"><div class="about-text reveal">
+ <p class="i18n" data-fa="بیش از ۱۴ سال در طراحی و توسعه نرم‌افزارهای بانکی، پرداخت و شبکه تجربه دارم؛ از توسعه سوئیچ با ++C تا معماری سامانه‌های بک‌آفیس با Java و Spring Boot. تمرکز من ایجاد تعادل بین قابلیت اتکا، یکپارچه‌سازی سیستم‌های موجود و توسعه‌پذیری است.">With over 14 years in banking, payments and network software, my work spans C++ payment switch development and Java/Spring Boot back-office architecture. I focus on pragmatic decisions that balance reliability, legacy integration and maintainability.</p>
+ <p class="i18n" data-fa="در طراحی معماری Hybrid، مدل‌سازی دامنه با JPA، ارتباطات شبکه‌ای و تحلیل عملکرد تجربه دارم. همچنین تحلیل نیازمندی‌ها، طراحی دیتابیس، بازبینی کد و هدایت فنی تیم‌های کوچک را بر عهده داشته‌ام.">My experience includes hybrid architecture, complex JPA domain models, network programming and performance diagnostics. I have led requirements analysis, database design, code reviews and small engineering teams.</p>
+ </div><div class="stats reveal"><div class="stat-card"><div class="num">14+</div><div class="label i18n" data-fa="سال تجربه">Years of experience</div></div><div class="stat-card"><div class="num">5+</div><div class="label i18n" data-fa="محیط عملیاتی بانکی">Banking production environments</div></div><div class="stat-card"><div class="num">1–3</div><div class="label i18n" data-fa="اعضای تیم تحت هدایت">Engineers led</div></div><div class="stat-card"><div class="num">MSc</div><div class="label i18n" data-fa="مهندسی کامپیوتر">Computer Engineering</div></div></div></div></div></section>
+<section id="experience"><div class="container">
+ <div class="section-head reveal"><span class="section-tag i18n" data-fa="مسیر حرفه‌ای">Career Path</span><h2 class="section-title i18n" data-fa="سوابق شغلی">Professional Experience</h2><p class="section-desc i18n" data-fa="پیشرفت از مهندسی سیستم و توسعه نرم‌افزار تا مسئولیت‌های معماری و راهبری فنی.">Progressing from systems engineering to software architecture and technical leadership.</p></div>
+ <div class="timeline">
+ <div class="tl-item current reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-top"><div class="tl-role i18n" data-fa="معماری و راهبری فنی · مهندسی نرم‌افزار">Architecture &amp; Technical Leadership · Software Engineering</div><div class="tl-period">Nov 2017 — Present</div></div><div class="tl-company">TOSAN · Tehran, Iran</div>
+ <div class="career-stage"><strong class="i18n" data-fa="مسئولیت‌های سال‌های اخیر: معماری و راهبری فنی">Recent responsibilities: Architecture &amp; technical leadership</strong><ul class="tl-list"><li class="i18n" data-fa="هدایت طراحی و پیاده‌سازی بک‌آفیس سوئیچ بانکی در حداقل پنج محیط عملیاتی بانک.">Led architecture and implementation of a banking switch back-office platform in at least five banking production environments.</li><li class="i18n" data-fa="انتخاب معماری Hybrid، طراحی مدل‌های چندسطحی JPA و دیتاسورس‌های متعدد، هدایت ۱ تا ۳ توسعه‌دهنده و Code Review.">Designed a pragmatic hybrid architecture, multi-level JPA domain models and multiple datasource integrations; led 1–3 engineers and code reviews.</li></ul></div>
+ <div class="career-stage"><strong class="i18n" data-fa="مسئولیت‌های پیشین: توسعه نرم‌افزار و عیب‌یابی">Earlier responsibilities: Software engineering &amp; diagnostics</strong><ul class="tl-list"><li class="i18n" data-fa="توسعه نرم‌افزارهای بانکداری و خودپرداز با جاوا و ++C و طراحی ابزار گرافیکی تحلیل لاگ با Qt.">Developed banking and ATM software and a Qt-based graphical log-analysis and resource-diagnostics tool.</li><li class="i18n" data-fa="تحلیل مشکلات حافظه و عملکرد با Valgrind و ابزارهای Visual Studio.">Investigated memory leaks and performance issues using Valgrind and Visual Studio diagnostics.</li></ul></div>
+ <p class="career-note i18n" data-fa="تفکیک دوره‌ها براساس مسئولیت‌های واقعی است؛ تاریخ و عنوان رسمی ارتقا هنوز تأیید نشده است.">Career phases are distinguished by responsibilities; official promotion titles and dates remain to be confirmed.</p><div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">JPA</span><span class="tag">Oracle</span><span class="tag">Kafka</span><span class="tag">C++ / Qt</span></div></div></div>
+ <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-top"><div class="tl-role i18n" data-fa="توسعه‌دهنده ارشد نرم‌افزار · مسئولیت‌های فنی">Senior Software Engineering Responsibilities</div><div class="tl-period">Feb 2017 — Nov 2017</div></div><div class="tl-company">Infotech International Group · Tehran, Iran</div><ul class="tl-list"><li class="i18n" data-fa="مشارکت در تبدیل ارتباط داخلی ماژول‌های سوئیچ پرداخت از Pipe به TCP Socket و ISO 8583 برای استقرار توزیع‌شده.">Helped modernize payment-switch inter-module communication from pipes to TCP sockets with ISO 8583, enabling distributed deployment.</li><li class="i18n" data-fa="توسعه ماژول چهارم برای استعلام و پرداخت قبوض و پیشگیری از پرداخت تکراری.">Developed a fourth module for bill inquiry, payment integration and duplicate-payment prevention.</li></ul><div class="tags"><span class="tag">C++</span><span class="tag">TCP</span><span class="tag">ISO 8583</span><span class="tag">Oracle / Pro*C</span></div></div></div>
+ <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-top"><div class="tl-role i18n" data-fa="توسعه‌دهنده نرم‌افزار · راهبر تیم">Software Developer — Team Lead</div><div class="tl-period">Aug 2012 — Feb 2017</div></div><div class="tl-company">Intelligence Processing · Tehran, Iran</div><ul class="tl-list"><li class="i18n" data-fa="راهبری تیم توسعه و ارتباطات امن در پروژه‌های نرم‌افزار شبکه، تحلیل پروتکل، رمزنگاری و سیستم‌های چندنخی.">Led development and secure connectivity teams working on network software, protocol analysis, cryptography and multithreaded systems.</li></ul><div class="tags"><span class="tag">C++ / Qt</span><span class="tag">Networking</span><span class="tag">Cryptography</span></div></div></div></div></div></section>
+<section id="cases"><div class="container"><div class="section-head reveal"><span class="section-tag i18n" data-fa="فعالیت‌های منتخب">Selected Work</span><h2 class="section-title i18n" data-fa="مطالعات موردی مهندسی">Engineering Case Studies</h2><p class="section-desc i18n" data-fa="توصیف عمومی پروژه‌های سازمانی، بدون نام اختصاصی محصولات یا اطلاعات محرمانه.">Anonymized engineering work; proprietary product names and confidential infrastructure details are omitted.</p></div><div class="case-grid reveal">
+ <article class="case-card"><span class="case-kicker">JAVA · SPRING BOOT · JPA · KAFKA</span><h3 class="i18n" data-fa="پلتفرم بک‌آفیس سوئیچ بانکی">Banking Switch Back-Office Platform</h3><p class="i18n" data-fa="طراحی و توسعه معماری Hybrid؛ ماژول‌های مدیریت نزدیک به اسکیمای موجود باقی ماندند، در حالی که گزارش‌گیری و زمان‌بندی به سرویس‌های مستقل تفکیک شدند. مدل‌سازی شروط چندسطحی مسیریابی روی چند دیتاسورس و ثبت رویداد تغییرات JPA در بازیابی پشتیبان.">Designed and implemented a pragmatic hybrid architecture: management functions remained close to existing switch schemas, while reporting, offline processing and scheduling were separated into services. Developed multi-level JPA routing models across data sources and audit recording of changes during backup restoration.</p></article>
+ <article class="case-card"><span class="case-kicker">C++ · TCP SOCKETS · ISO 8583</span><h3 class="i18n" data-fa="بازطراحی ارتباطات سوئیچ و پرداخت قبوض">Distributed Switch Communication &amp; Bill Payments</h3><p class="i18n" data-fa="تبدیل ارتباطات بین ماژول‌های سوئیچ از Pipe به Socket برای امکان اجرای توزیع‌شده. افزودن ماژول مدیریت قبوض با ISO 8583 و MTI 0100 برای استعلام و پیشگیری از پرداخت مجدد.">Modernized switch communication from local pipes to TCP sockets to allow distributed deployment. Added a bill-management module using ISO 8583 (MTI 0100) for payment inquiries and duplicate-payment controls.</p></article>
+ <article class="case-card"><span class="case-kicker">C++ · QT · VALGRIND</span><h3 class="i18n" data-fa="تحلیل گرافیکی لاگ و عملکرد خودپرداز">ATM Log &amp; Performance Diagnostics</h3><p class="i18n" data-fa="توسعه ابزار گرافیکی مبتنی بر Qt برای بررسی لاگ، تغییر وضعیت خودپرداز و نمودارهای مصرف حافظه و پردازنده. استفاده در کنار Valgrind و ابزارهای Visual Studio برای عیب‌یابی نشت حافظه.">Built a Qt graphical log-analysis tool to visualize ATM state transitions and RAM/CPU usage. Combined these observations with Valgrind and Visual Studio tools for memory-leak and performance investigations.</p></article>
+ </div></div></section>
 <section id="skills">
   <div class="container">
     <div class="section-head reveal">
