@@ -1,795 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nasser Allahdadi — Software Engineer</title>
-<meta name="description" content="Nasser Allahdadi — Senior Java Backend Developer specializing in microservices, event-driven systems, and applied AI / LLM automation.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0b0f'/%3E%3Ctext x='50' y='68' font-size='55' font-family='Arial,Helvetica,sans-serif' font-weight='bold' fill='%23ff7a1a' text-anchor='middle'%3ENA%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#091014" />
+<meta name="color-scheme" content="dark" />
+<meta name="description" content="Nasser Allahdadi — Software Architect & Technical Lead. Banking platforms, payment-switch engineering, Java, Spring Boot, and C++." />
+<title>Nasser Allahdadi | Software Architect & Technical Lead — Terminal Portfolio</title>
 <style>
-  :root{
-    --bg: #0a0a0d;
-    --bg-soft: #111116;
-    --card: #16161d;
-    --card-border: #2a2a33;
-    --text: #eceef1;
-    --text-dim: #9a9aa5;
-    --orange: #ff7a1a;
-    --orange-light: #ffab5c;
-    --orange-dim: rgba(255,122,26,0.12);
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Inter',system-ui,-apple-system,sans-serif;
-    overflow-x:hidden;
-    line-height:1.6;
-  }
-  h1,h2,h3,h4,.brand,.section-tag{font-family:'Space Grotesk',sans-serif;}
-  a{color:inherit;text-decoration:none;}
-  ul{list-style:none;}
-  ::selection{background:var(--orange);color:#0a0a0d;}
-
-  ::-webkit-scrollbar{width:10px;}
-  ::-webkit-scrollbar-track{background:var(--bg);}
-  ::-webkit-scrollbar-thumb{background:linear-gradient(var(--orange),#c25400);border-radius:10px;}
-
-  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
-
-  /* ---------- NAV ---------- */
-  header{
-    position:fixed;top:0;left:0;right:0;z-index:1000;
-    backdrop-filter:blur(14px);
-    background:rgba(10,10,13,0.65);
-    border-bottom:1px solid rgba(255,255,255,0.06);
-    transition:background .3s;
-  }
-  nav{
-    max-width:1100px;margin:0 auto;padding:16px 24px;
-    display:flex;align-items:center;justify-content:space-between;
-  }
-  .brand{font-weight:700;font-size:1.15rem;letter-spacing:.5px;display:flex;align-items:center;gap:10px;}
-  .brand .dot{color:var(--orange);}
-  .nav-links{display:flex;gap:32px;}
-  .nav-links a{
-    font-size:.92rem;color:var(--text-dim);font-weight:500;position:relative;padding:4px 0;
-    transition:color .25s;
-  }
-  .nav-links a::after{
-    content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--orange);
-    transition:width .25s;
-  }
-  .nav-links a:hover,.nav-links a.active{color:var(--text);}
-  .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
-  .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
-  .nav-toggle span{width:24px;height:2px;background:var(--text);display:block;transition:.3s;}
-
-  @media (max-width:820px){
-    .nav-links{
-      position:fixed;top:64px;right:0;left:0;background:var(--bg-soft);
-      flex-direction:column;gap:0;padding:8px 0;
-      transform:translateY(-150%);opacity:0;transition:all .3s ease;
-      border-bottom:1px solid var(--card-border);
-    }
-    .nav-links.open{transform:translateY(0);opacity:1;}
-    .nav-links a{padding:14px 24px;width:100%;display:block;}
-    .nav-toggle{display:flex;}
-  }
-
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;
-    text-align:center;overflow:hidden;padding:120px 24px 80px;
-  }
-  #particles{position:absolute;inset:0;z-index:0;}
-  .hero-glow{
-    position:absolute;width:600px;height:600px;border-radius:50%;
-    background:radial-gradient(circle, rgba(255,122,26,0.18), transparent 70%);
-    top:-200px;left:50%;transform:translateX(-50%);z-index:0;pointer-events:none;
-  }
-  .hero-content{position:relative;z-index:2;max-width:760px;}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;
-    border:1px solid var(--card-border);background:var(--orange-dim);color:var(--orange-light);
-    font-size:.82rem;font-weight:600;letter-spacing:.5px;margin-bottom:24px;
-  }
-  .eyebrow .pulse{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulse 1.8s infinite;}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,122,26,.6);}70%{box-shadow:0 0 0 10px rgba(255,122,26,0);}100%{box-shadow:0 0 0 0 rgba(255,122,26,0);}}
-  .hero h1{
-    font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;line-height:1.08;margin-bottom:18px;
-    letter-spacing:-1px;
-  }
-  .hero h1 .highlight{
-    background:linear-gradient(90deg,var(--orange),var(--orange-light));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  .hero p.role{font-size:clamp(1.05rem,2.4vw,1.35rem);color:var(--text-dim);margin-bottom:34px;font-weight:500;}
-  .hero p.role span{color:var(--orange-light);}
-  .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-  .btn{
-    padding:14px 30px;border-radius:10px;font-weight:600;font-size:.95rem;
-    transition:transform .25s, box-shadow .25s, background .25s;display:inline-flex;align-items:center;gap:8px;
-  }
-  .btn-primary{background:var(--orange);color:#170c02;}
-  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(255,122,26,0.35);}
-  .btn-ghost{border:1px solid var(--card-border);color:var(--text);}
-  .btn-ghost:hover{border-color:var(--orange);color:var(--orange-light);transform:translateY(-3px);}
-
-  .scroll-cue{
-    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;
-    display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-dim);font-size:.75rem;
-    letter-spacing:2px;text-transform:uppercase;
-  }
-  .scroll-cue .line{width:1px;height:36px;background:linear-gradient(var(--orange),transparent);animation:scrollDown 1.8s infinite;}
-  @keyframes scrollDown{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;transform:scaleY(1);transform-origin:top;}100%{opacity:0;transform:scaleY(1);transform-origin:bottom;}}
-
-  /* ---------- SECTION GENERIC ---------- */
-  section{padding:120px 0;position:relative;}
-  .section-tag{
-    color:var(--orange);font-weight:600;font-size:.85rem;letter-spacing:3px;text-transform:uppercase;
-    display:block;margin-bottom:14px;
-  }
-  .section-title{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:700;margin-bottom:20px;letter-spacing:-.5px;}
-  .section-head{max-width:640px;margin-bottom:64px;}
-  .section-desc{color:var(--text-dim);font-size:1.02rem;}
-
-  .reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease, transform .7s ease;}
-  .reveal.show{opacity:1;transform:translateY(0);}
-  .reveal-stagger > *{opacity:0;transform:translateY(30px);transition:opacity .6s ease, transform .6s ease;}
-  .reveal-stagger.show > *{opacity:1;transform:translateY(0);}
-  .reveal-stagger.show > *:nth-child(1){transition-delay:.05s;}
-  .reveal-stagger.show > *:nth-child(2){transition-delay:.12s;}
-  .reveal-stagger.show > *:nth-child(3){transition-delay:.19s;}
-  .reveal-stagger.show > *:nth-child(4){transition-delay:.26s;}
-  .reveal-stagger.show > *:nth-child(5){transition-delay:.33s;}
-  .reveal-stagger.show > *:nth-child(6){transition-delay:.4s;}
-  .reveal-stagger.show > *:nth-child(7){transition-delay:.47s;}
-
-  /* ---------- ABOUT ---------- */
-  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:start;}
-  .about-text p{color:var(--text-dim);margin-bottom:18px;font-size:1.03rem;}
-  .about-text strong{color:var(--text);}
-  .stats{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-  .stat-card{
-    background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:22px;
-    transition:transform .3s, border-color .3s;
-  }
-  .stat-card:hover{transform:translateY(-6px);border-color:var(--orange);}
-  .stat-card .num{font-size:2rem;font-weight:800;color:var(--orange);font-family:'Space Grotesk',sans-serif;}
-  .stat-card .label{color:var(--text-dim);font-size:.85rem;margin-top:4px;}
-
-  @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} }
-
-  /* ---------- EXPERIENCE TIMELINE ---------- */
-  .timeline{position:relative;padding-left:36px;}
-  .timeline::before{
-    content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;
-    background:linear-gradient(var(--orange), rgba(255,122,26,0.05));
-  }
-  .tl-item{position:relative;padding-bottom:56px;}
-  .tl-item:last-child{padding-bottom:0;}
-  .tl-dot{
-    position:absolute;left:-36px;top:4px;width:14px;height:14px;border-radius:50%;
-    background:var(--bg);border:2px solid var(--orange);
-  }
-  .tl-item.current .tl-dot{background:var(--orange);box-shadow:0 0 0 5px var(--orange-dim);}
-  .tl-card{
-    background:var(--card);border:1px solid var(--card-border);border-radius:16px;padding:28px 30px;
-    transition:transform .3s, border-color .3s;
-  }
-  .tl-card:hover{transform:translateY(-4px);border-color:rgba(255,122,26,0.4);}
-  .tl-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;}
-  .tl-role{font-size:1.15rem;font-weight:700;}
-  .tl-period{
-    color:var(--orange-light);font-size:.82rem;font-weight:600;background:var(--orange-dim);
-    padding:4px 12px;border-radius:999px;white-space:nowrap;height:fit-content;
-  }
-  .tl-company{color:var(--text-dim);font-size:.92rem;margin-bottom:16px;font-weight:500;}
-  .tl-company span{color:var(--orange-light);}
-  .tl-list{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
-  .tl-list li{color:var(--text-dim);font-size:.94rem;padding-left:18px;position:relative;}
-  .tl-list li::before{content:'▸';position:absolute;left:0;color:var(--orange);}
-  .tags{display:flex;flex-wrap:wrap;gap:8px;}
-  .tag{
-    font-size:.76rem;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,0.04);
-    border:1px solid var(--card-border);color:var(--text-dim);
-  }
-
-  /* ---------- SKILLS ---------- */
-  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
-  .skill-card{
-    background:var(--card);border:1px solid var(--card-border);border-radius:16px;padding:26px;
-    transition:transform .3s, border-color .3s;
-  }
-  .skill-card:hover{transform:translateY(-6px);border-color:var(--orange);}
-  .skill-card h3{font-size:1.02rem;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
-  .skill-card h3 .ico{
-    width:34px;height:34px;border-radius:9px;background:var(--orange-dim);display:flex;align-items:center;
-    justify-content:center;color:var(--orange);font-size:1.05rem;flex-shrink:0;
-  }
-  .skill-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;font-size:.88rem;}
-  .skill-row:last-child{margin-bottom:0;}
-  .skill-row .skill-name{color:var(--text-dim);}
-  .level{
-    font-size:.7rem;font-weight:700;padding:3px 11px;border-radius:999px;white-space:nowrap;
-    letter-spacing:.4px;text-transform:uppercase;flex-shrink:0;
-  }
-  .level-expert{background:var(--orange);color:#170c02;}
-  .level-advanced{background:var(--orange-dim);color:var(--orange-light);border:1px solid rgba(255,122,26,0.4);}
-  .level-intermediate{background:rgba(255,255,255,0.06);color:var(--text-dim);border:1px solid var(--card-border);}
-  .level-familiar{background:transparent;color:var(--text-dim);border:1px dashed var(--card-border);}
-
-  /* ---------- FOCUS AREAS ---------- */
-  .focus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;}
-  .focus-card{
-    background:linear-gradient(160deg, var(--card), var(--bg-soft));
-    border:1px solid var(--card-border);border-radius:16px;padding:30px 26px;
-    transition:transform .3s, border-color .3s;
-  }
-  .focus-card:hover{transform:translateY(-6px);border-color:var(--orange);}
-  .focus-card .ico{margin-bottom:16px;display:block;color:var(--orange);}
-  .focus-card .ico svg{width:30px;height:30px;}
-  .skill-card h3 .ico svg{width:18px;height:18px;}
-  .sub-title .ico svg{width:20px;height:20px;display:block;}
-  .btn svg{width:18px;height:18px;flex-shrink:0;}
-  .back-to-top svg{width:20px;height:20px;}
-  .focus-card h3{font-size:1.05rem;margin-bottom:10px;}
-  .focus-card p{color:var(--text-dim);font-size:.9rem;}
-
-  /* ---------- EDUCATION / CERTS ---------- */
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
-  @media (max-width:860px){.two-col{grid-template-columns:1fr;gap:48px;}}
-  .sub-title{font-size:1.15rem;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:10px;}
-  .sub-title .ico{color:var(--orange);}
-  .edu-item{border-left:2px solid var(--card-border);padding:2px 0 24px 22px;position:relative;}
-  .edu-item::before{content:'';position:absolute;left:-6px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--orange);}
-  .edu-item:last-child{padding-bottom:0;}
-  .edu-item .degree{font-weight:700;font-size:1rem;margin-bottom:4px;}
-  .edu-item .school{color:var(--orange-light);font-size:.9rem;margin-bottom:2px;}
-  .edu-item .period{color:var(--text-dim);font-size:.82rem;}
-  .cert-list{display:flex;flex-direction:column;gap:14px;}
-  .cert-item{
-    display:flex;justify-content:space-between;align-items:center;gap:12px;
-    background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:16px 20px;
-    transition:border-color .3s, transform .3s;
-  }
-  .cert-item:hover{border-color:var(--orange);transform:translateX(4px);}
-  .cert-item .cname{font-weight:600;font-size:.94rem;}
-  .cert-item .cissuer{color:var(--text-dim);font-size:.8rem;}
-  .cert-item .cyear{color:var(--orange-light);font-size:.82rem;font-weight:700;}
-
-  .lang-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
-  @media (max-width:600px){.lang-grid{grid-template-columns:1fr;}}
-  .lang-card{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:20px;text-align:center;}
-  .lang-card .lname{font-weight:700;margin-bottom:6px;}
-  .lang-card .llevel{color:var(--orange-light);font-size:.82rem;}
-
-  /* ---------- CONTACT ---------- */
-  .contact-box{
-    background:linear-gradient(135deg, rgba(255,122,26,0.1), rgba(255,122,26,0.02));
-    border:1px solid var(--card-border);border-radius:24px;padding:70px 40px;text-align:center;
-    position:relative;overflow:hidden;
-  }
-  .avatar-ring{position:relative;width:128px;height:128px;margin:0 auto 26px;}
-  .avatar-ring::before{
-    content:'';position:absolute;inset:-4px;border-radius:50%;
-    background:conic-gradient(from 0deg, var(--orange), var(--orange-light), var(--orange));
-    animation:spin 6s linear infinite;
-  }
-  @keyframes spin{to{transform:rotate(360deg);}}
-  .avatar-ring img{
-    position:relative;z-index:1;width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
-    border:3px solid var(--bg);
-  }
-  .contact-box h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:16px;}
-  .contact-box p{color:var(--text-dim);max-width:520px;margin:0 auto 34px;}
-  .contact-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-
-  footer{padding:40px 0;text-align:center;color:var(--text-dim);font-size:.85rem;border-top:1px solid var(--card-border);}
-  footer a{color:var(--orange-light);}
-
-  .back-to-top{
-    position:fixed;bottom:28px;right:28px;width:46px;height:46px;border-radius:50%;
-    background:var(--orange);color:#170c02;display:flex;align-items:center;justify-content:center;
-    font-size:1.1rem;opacity:0;pointer-events:none;transition:opacity .3s, transform .3s;z-index:900;
-  }
-  .back-to-top.show{opacity:1;pointer-events:auto;}
-  .back-to-top:hover{transform:translateY(-4px);}
-
-  /* ---------- NAV EXTRAS ---------- */
-  .nav-actions{display:flex;align-items:center;gap:10px;}
-  .nav-cv{
-    display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;
-    background:var(--orange);color:#170c02;font-weight:700;font-size:.84rem;white-space:nowrap;
-    transition:transform .25s, box-shadow .25s;
-  }
-  .nav-cv:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,122,26,0.3);}
-  .nav-cv svg{width:15px;height:15px;flex-shrink:0;}
-  .lang-toggle{
-    padding:8px 14px;border-radius:8px;border:1px solid var(--card-border);background:transparent;
-    color:var(--text-dim);font-weight:700;font-size:.78rem;letter-spacing:.5px;cursor:pointer;
-    transition:border-color .25s, color .25s;
-  }
-  .lang-toggle:hover{border-color:var(--orange);color:var(--orange-light);}
-  @media (max-width:820px){
-    .nav-cv{padding:8px 14px;font-size:.78rem;}
-  }
-
-  /* ---------- RTL / PERSIAN ---------- */
-  html[dir="rtl"] body{font-family:'Vazirmatn','Inter',system-ui,sans-serif;}
-  html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] h4,
-  html[dir="rtl"] .brand,html[dir="rtl"] .section-tag{font-family:'Vazirmatn',sans-serif;}
-  html[dir="rtl"] .timeline{padding-left:0;padding-right:36px;}
-  html[dir="rtl"] .timeline::before{left:auto;right:6px;}
-  html[dir="rtl"] .tl-dot{left:auto;right:-36px;}
-  html[dir="rtl"] .tl-list li{padding-left:0;padding-right:18px;}
-  html[dir="rtl"] .tl-list li::before{left:auto;right:0;}
-  html[dir="rtl"] .edu-item{border-left:none;border-right:2px solid var(--card-border);padding:2px 22px 24px 0;}
-  html[dir="rtl"] .edu-item::before{left:auto;right:-6px;}
-  html[dir="rtl"] .nav-links a::after{left:auto;right:0;}
+:root{--bg:#080e12;--panel:#0d161b;--panel2:#111d23;--line:#27363d;--line2:#1d2d34;--text:#edf7f7;--muted:#9bafb6;--muted2:#6f8991;--green:#72f0b0;--green2:#a7ffd0;--purple:#aaabff;--amber:#e8c583;--shadow:0 24px 80px rgba(0,0,0,.28);--mono:ui-monospace,'SFMono-Regular',Consolas,'Liberation Mono',monospace;--sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:35px}body{margin:0;color:var(--text);background:var(--bg);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}::selection{background:var(--green);color:#05110c}::-webkit-scrollbar{width:9px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#2b4246;border-radius:9px}*:focus-visible{outline:2px solid var(--green);outline-offset:4px}section{scroll-margin-top:38px}.skip{position:absolute;top:-80px;left:18px;background:var(--green);color:#08120e;padding:10px;z-index:200}.skip:focus{top:15px}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse 730px 560px at 77% 7%,rgba(68,163,133,.075),transparent 72%),radial-gradient(ellipse 650px 560px at 10% 68%,rgba(94,90,196,.04),transparent 74%),linear-gradient(90deg,rgba(125,216,205,.018) 1px,transparent 1px),linear-gradient(rgba(125,216,205,.018) 1px,transparent 1px);background-size:auto,auto,48px 48px,48px 48px;pointer-events:none}
+.app{width:100%;max-width:1600px;margin:0 auto;display:grid;grid-template-columns:262px minmax(0,1fr)}.sidebar{position:sticky;top:0;height:100dvh;min-height:670px;border-right:1px solid var(--line2);background:rgba(8,14,18,.86);backdrop-filter:blur(14px);padding:36px 21px 24px;display:flex;flex-direction:column;z-index:50}.logo{display:flex;align-items:center;gap:12px;padding:0 10px 28px;border-bottom:1px solid var(--line2)}.logo-symbol{height:42px;width:42px;border:1px solid #3f7662;border-radius:11px;color:var(--green);display:grid;place-items:center;font:700 17px var(--mono);box-shadow:inset 0 0 18px rgba(80,226,151,.08)}.logo-copy b{display:block;font:700 13px var(--mono);letter-spacing:.035em}.logo-copy span{display:block;color:var(--muted2);font:11px var(--mono);margin-top:3px}.sidebar-caption{font:600 10px var(--mono);letter-spacing:.16em;color:#718991;padding:27px 12px 10px}.nav{display:grid;gap:5px}.nav-link{display:flex;align-items:center;gap:10px;min-height:43px;color:#a8b9bc;border:1px solid transparent;border-radius:9px;padding:8px 11px;font:12px var(--mono);transition:.2s}.nav-link .n{color:#627e80;font:11px var(--mono)}.nav-link:hover,.nav-link.active{border-color:#2c5046;background:rgba(113,240,176,.075);color:var(--green2)}.nav-link.active .n{color:var(--green)}.side-bottom{margin-top:auto}.side-card{padding:16px;border:1px solid #29453c;background:linear-gradient(130deg,rgba(72,163,115,.11),rgba(12,27,31,.55));border-radius:11px}.status-dot{display:inline-block;width:7px;height:7px;border-radius:99px;background:var(--green);box-shadow:0 0 12px #72f0b080;margin-right:5px}.side-card b{display:block;font:700 12px var(--mono);margin-bottom:7px}.side-card p{margin:0;color:#9bafa9;font-size:11px;line-height:1.65}.side-links{display:flex;justify-content:space-between;gap:8px;padding:18px 6px 0;font:11px var(--mono);color:var(--muted2)}.side-links a:hover{color:var(--green)}
+.workspace{min-width:0;padding:28px clamp(24px,4.4vw,76px) 60px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 0 23px;border-bottom:1px solid var(--line2)}.breadcrumb{font:12px var(--mono);color:var(--muted)}.breadcrumb em{font-style:normal;color:var(--green)}.right-tools{display:flex;align-items:center;gap:16px;font:11px var(--mono);color:var(--muted2)}.pill-live{border:1px solid #2e5645;background:#10231c;color:#9ef5c2;padding:5px 9px;border-radius:6px;font:10px var(--mono)}.lang-btn{background:#132026;border:1px solid #34464d;color:var(--text);border-radius:7px;padding:7px 10px;font:700 11px var(--mono)}.lang-btn:hover{border-color:var(--green)}.mobile-top{display:none}
+.hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:23px;align-items:stretch;margin:35px 0 32px}.hero-copy{padding:52px 9px 28px 0;position:relative;min-width:0}.meta-line{display:flex;align-items:center;gap:9px;font:12px var(--mono);color:#8fc9ab;margin-bottom:24px}.meta-line:before{content:"";width:18px;height:1px;background:var(--green)}.hero h1{font-size:clamp(3.05rem,4.8vw,5.2rem);letter-spacing:-.07em;line-height:1.09;font-weight:780;margin:0 0 23px}.hero h1 .accent{color:var(--green)}.hero h1 .muted-title{color:#b8c9d2}.hero-desc{max-width:570px;color:#a8b9bf;font-size:clamp(14px,1.13vw,17px);line-height:1.9;margin:0 0 27px}.typed-label{color:var(--purple);font:12px var(--mono);margin:0 0 30px}.cursor{display:inline-block;width:9px;height:17px;background:var(--green);vertical-align:-4px;margin-left:3px;animation:blink 1.2s steps(1) infinite}@keyframes blink{50%{opacity:0}}.cta{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:8px;min-height:45px;padding:11px 17px;border:1px solid #36544a;font:700 12px var(--mono);transition:.2s}.btn.primary{background:var(--green);border-color:var(--green);color:#062016;box-shadow:0 8px 30px rgba(65,215,143,.09)}.btn.primary:hover{background:#a1ffca;transform:translateY(-2px)}.btn.secondary{color:var(--green2);background:#10241c}.btn.secondary:hover{border-color:var(--green);transform:translateY(-2px)}.hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:29px}.hero-tags span{font:11px var(--mono);padding:6px 10px;border-radius:5px;background:#131e24;border:1px solid #293840;color:#9db2b7}
+.terminal-window{border:1px solid #37534b;background:linear-gradient(150deg,#101e22,#0a1117);border-radius:14px;box-shadow:var(--shadow),0 0 60px rgba(73,239,167,.045);display:flex;flex-direction:column;overflow:hidden;min-height:460px}.window-title{height:46px;border-bottom:1px solid #2a4440;background:#14242a;display:flex;align-items:center;padding:0 14px;gap:7px}.dot{width:10px;height:10px;border-radius:50%;background:#fa7066}.dot:nth-child(2){background:#eac469}.dot:nth-child(3){background:#71d59a}.wtitle{font:11px var(--mono);color:#a5b9bd;margin:auto}.window-indicator{font:10px var(--mono);color:#78918a}.term-output{padding:23px 23px 10px;flex:1;font:12px/1.9 var(--mono);overflow:auto;max-height:415px;scrollbar-width:thin}.term-line{white-space:pre-wrap;overflow-wrap:anywhere}.term-line .prompt{color:var(--green)}.term-line .key{color:var(--purple)}.term-line .comment{color:#738c93}.term-line .value{color:#dfebef}.term-result{color:#bdccd1;white-space:pre-wrap;margin-bottom:5px}.term-command{color:var(--green);margin-top:9px}.term-form{display:flex;align-items:center;gap:10px;padding:13px 17px;border-top:1px solid #2a3a3c;background:#0b1619}.term-form label{font:13px var(--mono);color:var(--green);white-space:nowrap}.term-form input{border:0;outline:0;background:transparent;color:#d5efe7;font:12px var(--mono);min-width:0;flex:1}.term-form input::placeholder{color:#627f81}.terminal-hint{font:10px var(--mono);color:#788f8f;padding:0 18px 11px;background:#0b1619}.term-form:focus-within{box-shadow:inset 0 -2px 0 #5cc998}
+.kpi-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:0 0 85px}.kpi{padding:22px 23px;background:linear-gradient(140deg,#111c22,#0d161c);border:1px solid var(--line);border-radius:11px;min-height:116px;position:relative;overflow:hidden}.kpi:before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#52cba0,transparent);opacity:.3}.kpi strong{font:700 clamp(26px,3vw,37px)/1.15 var(--mono);display:block;letter-spacing:-.05em;color:var(--green)}.kpi span{display:block;margin-top:11px;font:11px var(--mono);color:var(--muted);line-height:1.6}.kpi .corner{position:absolute;right:17px;top:14px;color:#355c51;font:13px var(--mono)}
+.section{margin:0 0 100px}.section-top{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:32px}.section-kicker{color:var(--green);font:11px var(--mono);letter-spacing:.07em}.section-index{font:11px var(--mono);color:var(--muted2)}.section h2{font-size:clamp(26px,2.65vw,36px);font-weight:760;line-height:1.3;letter-spacing:-.04em;margin:0 0 12px}.section-intro{font-size:15px;line-height:1.9;color:var(--muted);max-width:760px;margin:0 0 30px}.prose-panel{display:grid;grid-template-columns:1.3fr .7fr;gap:26px}.about-block{border:1px solid var(--line);border-radius:13px;background:#111c21;padding:29px}.about-block .codepath{font:11px var(--mono);color:#8aa6ab;margin-bottom:18px}.about-block p{color:#b8c6ca;margin:0 0 19px;font-size:14px;line-height:1.95}.about-block p:last-child{margin-bottom:0}.about-block strong{color:var(--text);font-weight:650}.focus-stack{display:grid;gap:12px}.focus-tile{border:1px solid var(--line);border-radius:12px;background:#0f191f;padding:20px;position:relative}.focus-tile b{font:700 12px var(--mono);color:#e6eeec;display:block;margin-bottom:8px}.focus-tile p{color:#92a9ae;margin:0;font-size:12px;line-height:1.6}.focus-tile i{font:11px var(--mono);color:var(--green);font-style:normal;display:block;margin-bottom:7px}
+.timeline{border-left:1px solid #355148;margin:12px 0 0 10px;padding:0 0 0 30px}.timeline-item{position:relative;margin-bottom:18px;background:#0f1b20;border:1px solid var(--line);border-radius:12px;padding:24px 26px}.timeline-item:before{content:"";position:absolute;width:11px;height:11px;background:var(--green);border:3px solid var(--bg);border-radius:50%;left:-39px;top:27px;box-shadow:0 0 0 1px #3b7860}.timeline-item:nth-child(2):before,.timeline-item:nth-child(3):before{background:#9ba3bb}.exp-head{display:flex;justify-content:space-between;align-items:start;gap:16px;margin-bottom:14px}.exp-title{font-size:19px;font-weight:720;letter-spacing:-.02em}.exp-sub{font:12px var(--mono);color:#91afad;margin-top:3px}.date{font:11px var(--mono);white-space:nowrap;color:var(--green);background:#12251d;border:1px solid #315445;padding:6px 8px;border-radius:6px}.stage{border-left:2px solid #39765c;margin-top:18px;padding-left:17px}.stage h4{margin:0 0 8px;font:700 13px var(--mono);color:#e7f3f0}.stage .qual{color:#88a49b;font:11px var(--mono)}.stage ul{margin:10px 0 0;padding-left:17px;color:#b3c2c5;font-size:13px;line-height:1.85}.stage li{margin-bottom:6px}.exp-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.exp-tags span{font:10px var(--mono);color:#a5cabc;border:1px solid #35534b;border-radius:5px;padding:4px 8px}.honesty-note{font:11px/1.8 var(--mono);color:#86a2a1;margin:15px 0 0}
+.case-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.case{background:#101c21;border:1px solid var(--line);border-radius:13px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}.case:hover{transform:translateY(-5px);border-color:#5f967f;box-shadow:0 18px 42px rgba(0,0,0,.22)}.case-graphic{min-height:150px;padding:17px;background:radial-gradient(circle at 80% 10%,rgba(115,235,170,.12),transparent 63%),#132127;border-bottom:1px solid #2b4444;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.case-graphic:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 27px,#ffffff06 28px),repeating-linear-gradient(90deg,transparent,transparent 27px,#ffffff05 28px)}.ascii-card{position:relative;z-index:1;font:10px/1.7 var(--mono);color:#c6ead8;white-space:pre;letter-spacing:-.04em}.ascii-card .dim{color:#609c88}.case-content{padding:21px;display:flex;flex-direction:column;flex:1}.case-id{color:#80c9a5;font:10px var(--mono);letter-spacing:.05em}.case h3{margin:10px 0;font-size:19px;line-height:1.3;letter-spacing:-.025em}.case p{font-size:12.5px;color:#9fb3b8;line-height:1.8;margin:0 0 13px}.case details{border-top:1px solid var(--line);margin-top:auto;padding-top:12px}.case summary{cursor:pointer;font:700 11px var(--mono);color:var(--green);list-style:none;display:flex;justify-content:space-between;align-items:center}.case summary::-webkit-details-marker{display:none}.case summary:after{content:'+';font-size:18px;line-height:1}.case details[open] summary:after{content:'−'}.case .details-body{font-size:12px;color:#b1c4c7;line-height:1.8;margin-top:12px}.case .details-body strong{color:var(--green2)}
+.arch-visual{border:1px solid #334c45;border-radius:13px;background:linear-gradient(145deg,#0d191d,#111d23);padding:24px;margin-top:20px}.arch-caption{font:11px var(--mono);color:#729a8a;margin-bottom:23px;display:flex;justify-content:space-between}.flow-layout{display:grid;grid-template-columns:1fr 75px 1fr 75px 1fr;gap:0;align-items:center}.flow-node{border:1px solid #426b58;background:#172922;border-radius:10px;padding:18px 12px;min-height:115px;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:inset 0 0 25px rgba(70,194,122,.06)}.flow-node.indigo{border-color:#4a5b78;background:#1c2633}.flow-node .small{font:10px var(--mono);color:#76b69b;margin-bottom:8px}.flow-node b{font-size:13px;line-height:1.4}.flow-node em{font:10px var(--mono);font-style:normal;color:#91aaa7;margin-top:7px}.flow-arrow{text-align:center;font:21px var(--mono);color:var(--green);position:relative}.flow-explain{margin:18px 0 0;font-size:12px;color:#7d9a98}.arch-row{display:flex;gap:15px;margin-top:16px}.arch-row span{font:10px var(--mono);color:#85ad9d}
+.skill-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.skill-panel{border:1px solid var(--line);border-radius:12px;background:#101b20;padding:23px}.skill-panel .cat-id{color:var(--green);font:11px var(--mono)}.skill-panel h3{font-size:16px;margin:8px 0 17px}.skill-list{display:flex;flex-wrap:wrap;gap:8px}.skill-list span{background:#17292d;border:1px solid #2b4844;border-radius:6px;color:#b5d7ca;font:11px var(--mono);padding:7px 9px}
+.edu-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:17px}.edu-panel{border:1px solid var(--line);background:#101b20;border-radius:12px;padding:25px}.edu-panel h3{margin:0 0 22px;font:700 12px var(--mono);color:var(--green)}.edu-row{padding:0 0 18px 17px;margin-bottom:17px;border-left:2px solid #3d6855}.edu-row:last-child{margin:0;padding-bottom:0}.edu-row b{font-size:14px;display:block;line-height:1.5}.edu-row .college{font-size:12px;color:#a3b8b9;display:block;margin:4px 0}.edu-row .year{font:11px var(--mono);color:#7da795}.cert-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line2);padding:10px 0}.cert-row:last-child{border:0}.cert-row b{font-size:13px;font-weight:580}.cert-row span{font:11px var(--mono);color:#84b1a2}
+.contact-panel{background:radial-gradient(ellipse at 88% 20%,rgba(78,214,139,.09),transparent 62%),#101d22;border:1px solid #355b4a;border-radius:14px;padding:clamp(25px,4vw,42px);display:grid;grid-template-columns:1fr auto;align-items:center;gap:30px}.contact-panel .pre{font:11px var(--mono);color:var(--green)}.contact-panel h2{font-size:clamp(25px,3vw,39px);line-height:1.2;margin:10px 0 15px;letter-spacing:-.04em}.contact-panel p{color:#a6bcc0;font-size:14px;max-width:600px;margin:0}.contact-btns{display:grid;gap:10px;min-width:165px}.contact-btns .btn{width:100%}.footer{margin-top:45px;border-top:1px solid var(--line2);padding-top:23px;display:flex;justify-content:space-between;align-items:center;gap:12px;color:#6c878a;font:11px var(--mono)}.footer em{font-style:normal;color:var(--green)}
+html[dir=rtl] body{font-family:Tahoma,'Segoe UI',sans-serif}html[dir=rtl] .sidebar{border-left:1px solid var(--line2);border-right:0}html[dir=rtl] .hero-copy{padding-right:0;padding-left:9px}html[dir=rtl] .meta-line:before{order:2}html[dir=rtl] .terminal-window,html[dir=rtl] .ascii-card,html[dir=rtl] .breadcrumb,html[dir=rtl] .logo-symbol{direction:ltr}html[dir=rtl] .timeline{border-left:0;border-right:1px solid #355148;margin-right:10px;margin-left:0;padding:0 30px 0 0}html[dir=rtl] .timeline-item:before{left:auto;right:-39px}html[dir=rtl] .stage{border-left:0;border-right:2px solid #39765c;padding:0 17px 0 0}html[dir=rtl] .stage ul{padding:0 17px 0 0}html[dir=rtl] .edu-row{border-left:0;border-right:2px solid #3d6855;padding:0 17px 18px 0}html[dir=rtl] .case summary:after{margin-right:auto}html[dir=rtl] .flow-layout{direction:ltr}html[dir=rtl] .term-output{direction:ltr;text-align:left}html[dir=rtl] .term-form{direction:ltr}html[dir=rtl] .wtitle{direction:ltr}html[dir=rtl] .ascii-card{direction:ltr}
+@media(max-width:1250px){.app{grid-template-columns:218px minmax(0,1fr)}.sidebar{padding-left:15px;padding-right:15px}.workspace{padding:24px 30px 55px}.hero{grid-template-columns:1fr 1fr}.hero h1{font-size:clamp(2.6rem,4.2vw,4.2rem)}.case-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.case:last-child{grid-column:span 2}.case:last-child .case-graphic{min-height:120px}}
+@media(max-width:1020px){.app{display:block}.sidebar{position:fixed;left:0;top:0;width:264px;min-height:0;height:100dvh;transform:translateX(-105%);transition:transform .3s;box-shadow:18px 0 60px rgba(0,0,0,.4);z-index:100}.sidebar.open{transform:translateX(0)}.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:90;display:none}.overlay.show{display:block}.mobile-top{display:flex;align-items:center;justify-content:space-between;padding:12px 22px;border-bottom:1px solid var(--line2);background:#0b1419;position:sticky;top:0;z-index:70}.mobile-top b{font:700 12px var(--mono);color:var(--green)}.menu-btn{border:1px solid #38514e;color:var(--green);border-radius:6px;background:#112025;padding:6px 11px;font:15px var(--mono)}.workspace{padding:26px 34px 50px}.hero{grid-template-columns:1fr 1fr}}
+@media(max-width:790px){.hero{grid-template-columns:1fr;margin-top:18px}.hero-copy{padding:35px 0 8px}.hero h1{font-size:clamp(3.1rem,9vw,5rem)}.terminal-window{min-height:370px}.term-output{max-height:350px}.prose-panel,.edu-grid,.contact-panel{grid-template-columns:1fr}.flow-layout{grid-template-columns:1fr 32px 1fr 32px 1fr}.flow-node{padding:12px 6px}.flow-node b{font-size:11px}.kpi-row{margin-bottom:70px}.case-grid{grid-template-columns:1fr}.case:last-child{grid-column:auto}}
+@media(max-width:570px){.workspace{padding:16px 19px 38px}.topbar{align-items:flex-start}.right-tools{gap:8px}.pill-live{display:none}.hero h1{font-size:clamp(2.85rem,11vw,3.75rem)}.hero-desc{font-size:14px}.cta{gap:9px}.btn{font-size:11px;min-height:43px;padding:10px 12px}.terminal-window{min-height:365px}.term-output{padding:15px;font-size:11px;max-height:320px}.kpi-row{gap:8px}.kpi{padding:16px 12px;min-height:105px}.kpi strong{font-size:25px}.kpi span{font-size:9px}.section{margin-bottom:72px}.section-top{margin-bottom:22px}.section h2{font-size:27px}.section-intro{font-size:13px}.about-block{padding:20px}.exp-head{display:block}.date{display:inline-block;margin-top:12px}.timeline-item{padding:20px}.skill-columns{grid-template-columns:1fr}.flow-layout{grid-template-columns:1fr;gap:4px}.flow-arrow{transform:rotate(90deg);font-size:17px}.flow-node{min-height:77px}.flow-node b{font-size:13px}.arch-visual{padding:17px}.arch-row{flex-wrap:wrap}.contact-btns{min-width:0}.footer{flex-direction:column;align-items:flex-start}.hero-tags span{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
-
-<header>
-  <nav>
-    <a href="#home" class="brand">Nasser<span class="dot">.</span>Allahdadi</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about" class="i18n" data-fa="درباره من">About</a></li>
-      <li><a href="#experience" class="i18n" data-fa="تجربه">Experience</a></li>
-      <li><a href="#skills" class="i18n" data-fa="مهارت‌ها">Skills</a></li>
-      <li><a href="#focus" class="i18n" data-fa="تمرکز">Focus</a></li>
-      <li><a href="#education" class="i18n" data-fa="تحصیلات">Education</a></li>
-      <li><a href="#contact" class="i18n" data-fa="تماس">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">FA</button>
-      <a href="Nasser_Allahdadi_Resume.pdf" download id="cvDownload" class="nav-cv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 11 12 16 17 11"/><path d="M5 20h14"/></svg> <span class="i18n" data-fa="دانلود رزومه">Download CV</span></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
+<a href="#main" class="skip" data-i18n="skip">Skip to content</a>
+<div class="overlay" id="overlay"></div>
+<div class="mobile-top"><b>nasser@portfolio:~</b><button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button></div>
+<div class="app">
+<aside class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="logo"><div class="logo-symbol">NA_</div><div class="logo-copy"><b>NASSER.ALLAHDADI</b><span>PORTFOLIO // v2.0</span></div></div>
+  <div class="sidebar-caption" data-i18n="menuHeading">DIRECTORY</div>
+  <nav class="nav" id="sideNav">
+  <a class="nav-link active" href="#home"><span class="n">01</span><span data-i18n="navHome">~/home</span></a>
+  <a class="nav-link" href="#about"><span class="n">02</span><span data-i18n="navAbout">~/about</span></a>
+  <a class="nav-link" href="#experience"><span class="n">03</span><span data-i18n="navExperience">~/experience</span></a>
+  <a class="nav-link" href="#projects"><span class="n">04</span><span data-i18n="navProjects">~/case-studies</span></a>
+  <a class="nav-link" href="#skills"><span class="n">05</span><span data-i18n="navSkills">~/expertise</span></a>
+  <a class="nav-link" href="#education"><span class="n">06</span><span data-i18n="navEducation">~/education</span></a>
+  <a class="nav-link" href="#contact"><span class="n">07</span><span data-i18n="navContact">~/contact</span></a>
   </nav>
-</header>
-
-<section class="hero" id="home">
-  <canvas id="particles"></canvas>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="eyebrow"><span class="pulse"></span> <span class="i18n" data-fa="آماده برای فرصت‌های جدید">Open to new opportunities</span></div>
-    <h1 class="i18n" data-fa='سلام، من <span class="highlight">ناصر الله‌دادی</span> هستم'>Hi, I'm <span class="highlight">Nasser Allahdadi</span></h1>
-    <p class="role i18n" data-fa='مهندس ارشد بک‌اند <span>جاوا و اسپرینگ بوت</span> با تمرکز بر توسعه‌ی میکروسرویس برای پلتفرم‌های بانکی پرتراکنش — با پیشینه‌ای قوی در برنامه‌نویسی سیستمی <span>++C/C</span>.'>Senior <span>Java &amp; Spring Boot</span> backend engineer building microservices for high‑volume banking platforms — with a strong background in <span>C/C++</span> systems programming.</p>
-    <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary i18n" data-fa="در تماس باشید">Get in touch</a>
-      <a href="#experience" class="btn btn-ghost i18n" data-fa="مشاهده‌ی تجربه‌ها">View experience</a>
+  <div class="side-bottom"><div class="side-card"><b><span class="status-dot"></span><span data-i18n="sideFocus">FOCUS: PRODUCTION SYSTEMS</span></b><p data-i18n="sideText">Pragmatic architecture. Reliable engineering. Real-world banking constraints.</p></div><div class="side-links"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nallahdadi">GITHUB ↗</a><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nallahdadi">LINKEDIN ↗</a></div></div>
+</aside>
+<main class="workspace" id="main">
+  <div class="topbar"><div class="breadcrumb">root <span style="color:#536e70">/</span> <em data-i18n="breadcrumb">portfolio</em> <span style="color:#536e70">/</span> <span data-i18n="overview">overview</span></div><div class="right-tools"><span class="pill-live">● <span data-i18n="available">DESIGNED FOR THE WEB</span></span><button id="langBtn" class="lang-btn" aria-label="Switch site language">FA / EN</button></div></div>
+  <section class="hero" id="home" aria-label="Introduction">
+    <div class="hero-copy">
+      <div class="meta-line" data-i18n="heroLabel">ENGINEERING SYSTEMS THAT LAST</div>
+      <h1><span data-i18n="hero1">Software</span><br><span class="accent" data-i18n="hero2">Architect.</span><br><span class="muted-title" data-i18n="hero3">Technical Lead.</span></h1>
+      <p class="hero-desc" data-i18n="heroDesc">I design and evolve complex systems at the intersection of banking, payment processing, and modern backend architecture. From low-level C++ to Java platforms built for production.</p>
+      <p class="typed-label"><span data-i18n="heroTag">// designing for the real world</span><span class="cursor" aria-hidden="true"></span></p>
+      <div class="cta"><a class="btn primary" href="#projects"><span data-i18n="explore">Explore case studies</span><span aria-hidden="true">↗</span></a><a class="btn secondary" href="#contact"><span data-i18n="contactCta">Get in touch</span><span aria-hidden="true">→</span></a></div>
+      <div class="hero-tags"><span>JAVA / SPRING</span><span>C++ / Qt</span><span>ISO 8583</span><span>ARCHITECTURE</span></div>
     </div>
-  </div>
-  <div class="scroll-cue"><span class="i18n" data-fa="اسکرول">Scroll</span><span class="line"></span></div>
-</section>
-
-<section id="about">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-tag i18n" data-fa="درباره‌ی من">About Me</span>
-      <h2 class="section-title i18n" data-fa="۱۴ سال تجربه در تبدیل سیستم‌های پیچیده به نرم‌افزارهای قابل‌اعتماد">14 years turning complex systems into reliable software</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p class="i18n" data-fa='من یک <strong>مهندس نرم‌افزار بک‌اند مستقر در تهران، ایران</strong> هستم با ۱۴ سال تجربه در حوزه‌ی بانکداری، پرداخت و نرم‌افزارهای شبکه. بیش از ۷ سال است که در <strong>توسن</strong> (توسعه راه‌کارهای نرم‌افزاری نگین)، بزرگ‌ترین ارائه‌دهنده‌ی خدمات پرداخت ایران، تمرکز اصلی‌ام طراحی و نگهداری <strong>ساب‌سیستم‌های بک‌اند جاوا برای بک‌آفیس سوییچ بانکی</strong> بوده است.'>I'm a <strong>backend software engineer based in Tehran, Iran</strong>, with 14 years of experience across banking, payments, and network software. For the past 7+ years at <strong>TOSAN</strong>, Iran's largest payment service provider, my core focus has been designing and maintaining <strong>Java backend subsystems for the bank's switch back office</strong>.</p>
-        <p class="i18n" data-fa='استک اصلی روزانه‌ام حول <strong>اکوسیستم جاوا: Spring، Spring Boot و JPA</strong> است. چندین ساب‌سیستم جاوایی با تعداد زیادی سرویس‌کال پیاده‌سازی و نگهداری کرده‌ام که نیازمند کار مستمر با <strong>مدیریت entity و دیتاسورس در JPA، joinهای پیچیده و دیتابیس Oracle</strong> بوده، در کنار <strong>concurrency و multi-threading در جاوا</strong> و طراحی بک‌اند با نگاه به موضوعات امنیتی.'>Day to day, my stack centers on the <strong>Java ecosystem: Spring, Spring Boot, and JPA</strong>. I've built and maintained several Java subsystems with numerous internal service calls, working continuously with <strong>JPA entity &amp; datasource management, complex joins, and Oracle databases</strong>, alongside <strong>Java concurrency and multi‑threading</strong> and security‑aware backend design.</p>
-        <p class="i18n" data-fa='در سال‌های ابتدایی‌تر کارم — حدود ۶ تا ۷ سال پیش — به‌طور جدی درگیر <strong>برنامه‌نویسی ATM و توسعه با C/C++</strong> بر پایه‌ی استاندارد <strong>WOSA/XFS</strong> با فریم‌ورک <strong>Qt</strong> بودم. این تخصص هنوز هم قوی است، هرچند امروز نقش کم‌رنگ‌تری نسبت به کار جاوا/اسپرینگم دارد. همچنین با <strong>Kafka و معماری‌های event-driven</strong> و <strong>یادگیری ماشین کلاسیک</strong> آشنایی کاری (متوسط) دارم. جدا از کار اصلی، به‌صورت خودآموز روی توسعه‌ی مدرن جاوااسکریپت هم کار می‌کنم؛ یک پروژه‌ی شخصی با <strong>Node.js، Next.js و Prisma</strong>.'>Earlier in my career — roughly 6–7 years ago — I was deeply involved in <strong>ATM programming and C/C++</strong> development on the <strong>WOSA/XFS</strong> standard using the <strong>Qt framework</strong>. That expertise is still solid, though today it plays a smaller role than my Java/Spring work. I also have working familiarity with <strong>Kafka &amp; event‑driven architectures</strong> and <strong>classical machine learning</strong>. Outside of work, I've been learning modern JS full‑stack development through a self‑taught side project with <strong>Node.js, Next.js, and Prisma</strong>.</p>
+    <div class="terminal-window" aria-label="Interactive terminal portfolio">
+      <div class="window-title"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="wtitle">profile.yml — bash</span><span class="window-indicator">● LOCAL</span></div>
+      <div class="term-output" id="termOutput" role="log" aria-live="polite" aria-relevant="additions">
+        <div class="term-line"><span class="prompt">❯</span> cat profile.yml</div>
+        <div class="term-line"><span class="comment"># professional_identity</span></div>
+        <div class="term-line"><span class="key">name:</span> <span class="value">Nasser Allahdadi</span></div>
+        <div class="term-line"><span class="key">role:</span> <span class="value">Software Architect / Technical Lead</span></div>
+        <div class="term-line"><span class="key">domain:</span> <span class="value">Banking &amp; Payment Systems</span></div>
+        <div class="term-line"><span class="key">stack:</span> <span class="value">[Java, Spring Boot, C++, Oracle]</span></div>
+        <div class="term-line"><span class="key">principle:</span> <span class="value">pragmatic, production-first</span></div>
+        <div class="term-line" style="margin-top:18px"><span class="prompt">❯</span> <span class="value">./explore --interactive</span></div>
+        <div class="term-line"><span class="comment"># try: help, about, projects, skills, contact</span></div>
       </div>
-      <div class="stats reveal">
-        <div class="stat-card"><div class="num">14+</div><div class="label i18n" data-fa="سال تجربه">Years of experience</div></div>
-        <div class="stat-card"><div class="num">3</div><div class="label i18n" data-fa="شرکت · بانکی و فین‌تک">Companies · Banking &amp; Fintech</div></div>
-        <div class="stat-card"><div class="num">10+</div><div class="label i18n" data-fa="زبان و فریم‌ورک">Languages &amp; frameworks</div></div>
-        <div class="stat-card"><div class="num i18n" data-fa="ارشد">MSc</div><div class="label i18n" data-fa="مهندسی کامپیوتر">Computer Engineering</div></div>
-      </div>
+      <form class="term-form" id="termForm"><label for="termInput">nasser@portfolio:~$</label><input autocomplete="off" spellcheck="false" aria-label="Terminal command" id="termInput" placeholder="help" maxlength="80"/></form>
+      <div class="terminal-hint" data-i18n="terminalHint">↵ press Enter to navigate · no external commands are executed</div>
     </div>
+  </section>
+  <div class="kpi-row" aria-label="Career overview">
+    <div class="kpi"><span class="corner">01</span><strong>14+</strong><span data-i18n="metric1">YEARS IN SOFTWARE ENGINEERING</span></div>
+    <div class="kpi"><span class="corner">02</span><strong>5+</strong><span data-i18n="metric2">BANKING PRODUCTION ENVIRONMENTS</span></div>
+    <div class="kpi"><span class="corner">03</span><strong>03</strong><span data-i18n="metric3">ENGINEERING CASE STUDIES</span></div>
   </div>
-</section>
-
-<section id="experience">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-tag i18n" data-fa="مسیر شغلی">Career Path</span>
-      <h2 class="section-title i18n" data-fa="سوابق کاری">Work Experience</h2>
-      <p class="section-desc i18n" data-fa="مسیری از سیستم‌های بک‌اند جاوا، نرم‌افزارهای بانکی و مهندسی شبکه‌ی امن.">A journey through Java backend systems, banking software, and secure network engineering.</p>
-    </div>
-
+  <section class="section" id="about">
+    <div class="section-top"><span class="section-kicker">$ cat about.md</span><span class="section-index">// 02</span></div>
+    <h2 data-i18n="aboutTitle">Not just writing code. Designing the system around it.</h2><p class="section-intro" data-i18n="aboutIntro">Technical depth across backend architecture, low-level systems programming, and the realities of operating banking platforms.</p>
+    <div class="prose-panel"><div class="about-block"><div class="codepath">// ABOUT / ENGINEERING PHILOSOPHY</div>
+      <p data-i18n="aboutP1">I'm a software engineer and technical lead with more than 14 years of experience across <strong>banking, payments, and network software</strong>. I've worked on both sides of a transaction system: C++ banking switch components and Java/Spring Boot management platforms.</p>
+      <p data-i18n="aboutP2">My approach to architecture is <strong>pragmatic</strong>: work with the realities of existing database schemas and integration contracts, while separating reporting, scheduled processing, and other workloads when independent services offer a clear benefit.</p>
+      <p data-i18n="aboutP3">I combine hands-on implementation with <strong>requirements analysis, database modeling, code review, and guidance for small engineering teams</strong>. I also enjoy diagnosing hard production issues and building the tooling needed to understand them.</p>
+    </div><div class="focus-stack"><div class="focus-tile"><i>01 / DECISIONS</i><b data-i18n="focus1Title">Pragmatic Architecture</b><p data-i18n="focus1Desc">Hybrid systems, legacy integration, domain models and event-driven workflows.</p></div><div class="focus-tile"><i>02 / ENGINEERING</i><b data-i18n="focus2Title">Systems-Level Depth</b><p data-i18n="focus2Desc">C++, sockets, payment protocols, concurrency and performance investigations.</p></div><div class="focus-tile"><i>03 / LEADERSHIP</i><b data-i18n="focus3Title">Technical Ownership</b><p data-i18n="focus3Desc">Architecture choices, engineering standards, code reviews and mentoring.</p></div></div></div>
+  </section>
+  <section class="section" id="experience">
+    <div class="section-top"><span class="section-kicker">$ git log --career --oneline</span><span class="section-index">// 03</span></div>
+    <h2 data-i18n="experienceTitle">Professional Experience</h2><p class="section-intro" data-i18n="experienceIntro">A progression through network systems, banking switch engineering, and technical ownership of enterprise back-office platforms.</p>
     <div class="timeline">
-
-      <div class="tl-item current reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div class="tl-role i18n" data-fa="توسعه‌دهنده نرم‌افزار">Software Developer</div>
-            <div class="tl-period i18n" data-fa="نوامبر ۲۰۱۷ — اکنون">Nov 2017 — Present</div>
-          </div>
-          <div class="tl-company i18n" data-fa='<span>توسن</span> · تهران، ایران — بزرگ‌ترین ارائه‌دهنده‌ی خدمات پرداخت (PSP) ایران'><span>TOSAN</span> · Tehran, Iran — largest Payment Service Provider (PSP) in Iran</div>
-          <ul class="tl-list">
-            <li class="i18n" data-fa="طراحی و نگهداری ساب‌سیستم‌های بک‌اند جاوا برای بک‌آفیس سوییچ بانکی، با کار گسترده روی JPA و Oracle — مدل‌سازی entity، joinهای پیچیده و مدیریت دیتاسورس.">Design and maintain Java backend subsystems for the bank's switch back office, with extensive JPA / Oracle work — entity modeling, complex joins, and datasource management.</li>
-            <li class="i18n" data-fa="استفاده از concurrency و multi-threading در جاوا برای پایداری سرویس‌های تراکنشی پرحجم.">Apply Java concurrency and multi‑threading to keep high‑volume transaction services reliable.</li>
-            <li class="i18n" data-fa="مشارکت در روند مدرن‌سازی به سمت میکروسرویس‌های Spring Boot و الگوهای event-driven مبتنی بر Kafka؛ آشنایی با اتوماسیون n8n و ابزارهای مبتنی بر LLM.">Contribute to modernization efforts toward Spring Boot microservices and Kafka‑based event‑driven patterns; explore n8n workflow automation and LLM‑assisted tooling.</li>
-            <li class="i18n" data-fa="نگهداری نرم‌افزار ATM مبتنی بر استاندارد WOSA/XFS، شامل پردازش تراکنش و پرداخت بر پایه‌ی ISO 8583.">Maintain ATM software built on the WOSA/XFS standard, handling ISO 8583 transaction &amp; payment processing.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Java</span><span class="tag">Spring / Spring Boot</span><span class="tag">JPA</span>
-            <span class="tag">Oracle</span><span class="tag">Concurrency</span><span class="tag">C/C++ · Qt</span>
-            <span class="tag">ISO 8583</span><span class="tag">WOSA/XFS</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div class="tl-role i18n" data-fa="توسعه‌دهنده نرم‌افزار">Software Developer</div>
-            <div class="tl-period i18n" data-fa="فوریه ۲۰۱۷ — نوامبر ۲۰۱۷">Feb 2017 — Nov 2017</div>
-          </div>
-          <div class="tl-company i18n" data-fa='<span>Infotech International Group</span> · تهران، ایران — پارتنر رسمی Ingenico'><span>Infotech International Group</span> · Tehran, Iran — official Ingenico partner</div>
-          <ul class="tl-list">
-            <li class="i18n" data-fa="توسعه و رفع اشکال نرم‌افزار سوییچ S2M، یک سوییچ پرداخت مبتنی بر استاندارد ISO 8583.">Developed and fixed the S2M Switch software, a payment switch built on the ISO 8583 standard.</li>
-            <li class="i18n" data-fa="کار با Oracle / PL/SQL، اسکریپت‌نویسی شل لینوکس و برنامه‌نویسی شبکه در سطح ساکت.">Worked with Oracle / PL/SQL, Linux shell scripting, and socket‑level network programming.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">C/C++</span><span class="tag">Java</span><span class="tag">PL/SQL</span>
-            <span class="tag">ISO 8583</span><span class="tag">Linux</span><span class="tag">Docker</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div class="tl-role i18n" data-fa="توسعه‌دهنده نرم‌افزار — سرتیم">Software Developer — Team Lead</div>
-            <div class="tl-period i18n" data-fa="اوت ۲۰۱۲ — فوریه ۲۰۱۷">Aug 2012 — Feb 2017</div>
-          </div>
-          <div class="tl-company i18n" data-fa='<span>Intelligence Processing</span> · تهران، ایران — راهکارهای شبکه'><span>Intelligence Processing</span> · Tehran, Iran — network solutions</div>
-          <ul class="tl-list">
-            <li class="i18n" data-fa="سرپرستی تیم توسعه و تیم تخصصی Secure Connections.">Led the development team and the Secure Connections specialist team.</li>
-            <li class="i18n" data-fa="توسعه‌ی نرم‌افزارهای مبتنی بر شبکه شامل رمزنگاری، تحلیل پروتکل و برنامه‌نویسی سیستمی چندنخی.">Built network‑based software covering cryptography, protocol analysis, and multi‑threaded system programming.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">C/C++ · Qt</span><span class="tag">C#</span><span class="tag">Python</span>
-            <span class="tag">Cryptography</span><span class="tag">Network Programming</span>
-          </div>
-        </div>
-      </div>
-
+      <article class="timeline-item"><div class="exp-head"><div><div class="exp-title">TOSAN</div><div class="exp-sub">TEHRAN · SOFTWARE ENGINEERING</div></div><span class="date">NOV 2017 — <span data-i18n="present">PRESENT</span></span></div>
+        <div class="stage"><h4 data-i18n="tosanRecentTitle">Recent focus — Architecture &amp; Technical Leadership</h4><span class="qual" data-i18n="stageNote">Role progression shown by responsibility; exact promotion dates not confirmed.</span><ul><li data-i18n="tosanR1">Led architecture and development of a banking switch back-office platform used in at least five banking production environments.</li><li data-i18n="tosanR2">Designed hybrid architecture around existing Oracle schemas, with independent reporting and scheduling services.</li><li data-i18n="tosanR3">Designed complex JPA models, audit/change tracking and multiple datasource integrations; guided 1–3 engineers through task allocation and reviews.</li></ul></div>
+        <div class="stage"><h4 data-i18n="tosanEarlierTitle">Earlier focus — Software Engineering &amp; Diagnostics</h4><ul><li data-i18n="tosanE1">Worked on banking and ATM software, including C++/Qt engineering and operational troubleshooting.</li><li data-i18n="tosanE2">Built a graphical log-analysis tool to visualize ATM state changes, memory and CPU usage; investigated memory leaks with Valgrind and Visual Studio.</li></ul></div>
+        <div class="exp-tags"><span>Java</span><span>Spring Boot</span><span>JPA / Oracle</span><span>Kafka</span><span>C++ / Qt</span></div>
+      </article>
+      <article class="timeline-item"><div class="exp-head"><div><div class="exp-title">Infotech International Group</div><div class="exp-sub">TEHRAN · SOFTWARE DEVELOPER / SENIOR RESPONSIBILITIES</div></div><span class="date">FEB 2017 — NOV 2017</span></div><div class="stage"><h4 data-i18n="infotechTitle">C++ Payment Switch Engineering</h4><ul><li data-i18n="infotech1">Modernized communication between existing payment switch components from local pipes to TCP sockets using ISO 8583, enabling deployment across separate servers.</li><li data-i18n="infotech2">Added a bill-management module for inquiries, payment processing and duplicate-payment prevention using ISO 8583 MTI 0100.</li><li data-i18n="infotech3">Worked with Oracle and Pro*C integrations in an established operational switch.</li></ul></div><div class="exp-tags"><span>C++</span><span>TCP Socket</span><span>ISO 8583</span><span>Oracle / Pro*C</span></div></article>
+      <article class="timeline-item"><div class="exp-head"><div><div class="exp-title">Intelligence Processing</div><div class="exp-sub">TEHRAN · SOFTWARE DEVELOPER / TEAM LEAD</div></div><span class="date">AUG 2012 — FEB 2017</span></div><div class="stage"><h4 data-i18n="intelligenceTitle">Network &amp; Secure Systems Engineering</h4><ul><li data-i18n="intelligence1">Led software development and secure connectivity teams.</li><li data-i18n="intelligence2">Developed network software involving cryptography, protocol analysis and multithreaded systems programming.</li></ul></div><div class="exp-tags"><span>C/C++ · Qt</span><span>Networking</span><span>Cryptography</span></div></article>
     </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-tag i18n" data-fa="جعبه‌ابزار">Toolbox</span>
-      <h2 class="section-title i18n" data-fa="مهارت‌ها و فناوری‌ها">Skills &amp; Technologies</h2>
-      <p class="section-desc i18n" data-fa="جاوا و میکروسرویس هسته‌ی اصلی است — همراه با پیشینه‌ای قوی در سیستم‌های C/C++، و آشنایی عملی با ابزارهای مدرن داده و اتوماسیون.">Java &amp; microservices are the core — with a solid legacy in C/C++ systems, and hands‑on familiarity with modern data and automation tools.</p>
+  </section>
+  <section class="section" id="projects">
+    <div class="section-top"><span class="section-kicker">$ ls ./case-studies/</span><span class="section-index">// 04</span></div>
+    <h2 data-i18n="casesTitle">Engineering Case Studies</h2><p class="section-intro" data-i18n="casesIntro">Selected engineering challenges with anonymized project names and non-sensitive descriptions.</p>
+    <div class="case-grid">
+      <article class="case"><div class="case-graphic"><div class="ascii-card"> ┌───────────────┐
+ │ MANAGEMENT    │
+ │ JPA / ORACLE  │
+ └──────┬────────┘
+        <span class="dim">│ Kafka events</span>
+ ┌──────▼────────┐
+ │ REPORTING     │
+ │ SERVICES      │
+ └───────────────┘</div></div><div class="case-content"><span class="case-id">CASE_001 / JAVA · SPRING</span><h3 data-i18n="case1Title">Banking Back-Office Architecture</h3><p data-i18n="case1Desc">A hybrid banking back-office design balancing legacy switch schemas with independently deployable reporting and scheduling services.</p><details><summary data-i18n="readNotes">Read engineering notes</summary><div class="details-body" data-i18n="case1Notes"><strong>Challenge:</strong> Management modules depended on existing switch schemas. <strong>Approach:</strong> Keep schema-coupled functions together; separate reporting, offline workflows, and scheduling into services; transfer transaction events via Kafka. Model routing rules with multi-level JPA entities, multiple data sources, and audit events during restore. <strong>Context:</strong> At least five operational banking environments.</div></details></div></article>
+      <article class="case"><div class="case-graphic"><div class="ascii-card">  [ HSM ]    [ CORE ]
+      <span class="dim">\\     /</span>
+       TCP / ISO8583
+      <span class="dim">/     \\</span>
+ [ GATEWAY ]  [ BILLS ]
+   <span class="dim">distributed modules</span></div></div><div class="case-content"><span class="case-id">CASE_002 / C++ · NETWORKING</span><h3 data-i18n="case2Title">Payment Switch Modernization</h3><p data-i18n="case2Desc">Replaced pipe-based communication with socket networking to support distributed deployment, and extended the switch with bill services.</p><details><summary data-i18n="readNotes">Read engineering notes</summary><div class="details-body" data-i18n="case2Notes"><strong>Challenge:</strong> Local pipe communication restricted module placement. <strong>Approach:</strong> Move existing modules to TCP socket messaging with ISO 8583. Add a fourth component for bill inquiry, payment and duplicate-payment prevention, connected to an external billing system. <strong>Result:</strong> Modules could be deployed across separate servers.</div></details></div></article>
+      <article class="case"><div class="case-graphic"><div class="ascii-card"> CPU  <span class="dim">▁▂▅▃▂▆▇▃▁▂▃▂</span>
+ MEM  <span class="dim">▁▂▃▄▅▆▇▇▇█</span>
+ LOG  [state_changed]
+ ATM  <span style="color:#9ff2bf">● events tracked</span>
+      QT VISUALIZER</div></div><div class="case-content"><span class="case-id">CASE_003 / QT · DIAGNOSTICS</span><h3 data-i18n="case3Title">ATM Observability &amp; Diagnostics</h3><p data-i18n="case3Desc">A Qt-based visual analyzer for ATM logs, state transitions, and RAM/CPU usage during execution and troubleshooting.</p><details><summary data-i18n="readNotes">Read engineering notes</summary><div class="details-body" data-i18n="case3Notes"><strong>Challenge:</strong> Understand where memory and processor behavior changed during ATM execution. <strong>Approach:</strong> Build a graphical Qt log viewer with time-aligned resource charts and state changes; complement analysis with Valgrind and Visual Studio telemetry. <strong>Purpose:</strong> Improve diagnosis of memory leaks and operational anomalies.</div></details></div></article>
     </div>
-
-    <div class="skills-grid reveal-stagger">
-      <div class="skill-card">
-        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/></svg></span> <span class="i18n" data-fa="اکوسیستم جاوا و میکروسرویس">Java Ecosystem &amp; Microservices</span></h3>
-        <div class="skill-row"><span class="skill-name">Java</span><span class="level level-expert i18n" data-fa="خبره">Expert</span></div>
-        <div class="skill-row"><span class="skill-name">Spring / Spring Boot</span><span class="level level-expert i18n" data-fa="خبره">Expert</span></div>
-        <div class="skill-row"><span class="skill-name i18n" data-fa="پایداری داده با JPA و Oracle">JPA &amp; Oracle Persistence</span><span class="level level-expert i18n" data-fa="خبره">Expert</span></div>
-      </div>
-
-      <div class="skill-card">
-        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></span> <span class="i18n" data-fa="داده و پیام‌رسانی">Data &amp; Messaging</span></h3>
-        <div class="skill-row"><span class="skill-name">Oracle / PL‑SQL</span><span class="level level-expert i18n" data-fa="خبره">Expert</span></div>
-        <div class="skill-row"><span class="skill-name i18n" data-fa="Kafka و سیستم‌های Event-Driven">Kafka &amp; Event‑Driven Systems</span><span class="level level-advanced i18n" data-fa="پیشرفته">Advanced</span></div>
-        <div class="skill-row"><span class="skill-name">MySQL</span><span class="level level-advanced i18n" data-fa="پیشرفته">Advanced</span></div>
-      </div>
-
-      <div class="skill-card">
-        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><line x1="5" y1="21" x2="5" y2="10"/><line x1="9" y1="21" x2="9" y2="10"/><line x1="15" y1="21" x2="15" y2="10"/><line x1="19" y1="21" x2="19" y2="10"/><polygon points="12 3 21 9 3 9"/></svg></span> <span class="i18n" data-fa="بانکداری و پرداخت">Banking &amp; Payments</span></h3>
-        <div class="skill-row"><span class="skill-name">ISO 8583</span><span class="level level-expert i18n" data-fa="خبره">Expert</span></div>
-        <div class="skill-row"><span class="skill-name i18n" data-fa="پردازش تراکنش">Transaction Processing</span><span class="level level-expert i18n" data-fa="خبره">Expert</span></div>
-        <div class="skill-row"><span class="skill-name">WOSA/XFS · ATM Software</span><span class="level level-expert i18n" data-fa="خبره">Expert</span></div>
-      </div>
-
-      <div class="skill-card">
-        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></span> <span class="i18n" data-fa="برنامه‌نویسی سیستمی (++C/C)">Systems Programming (C/C++)</span></h3>
-        <div class="skill-row"><span class="skill-name">C / C++</span><span class="level level-expert i18n" data-fa="خبره">Expert</span></div>
-        <div class="skill-row"><span class="skill-name i18n" data-fa="فریم‌ورک Qt">Qt Framework</span><span class="level level-expert i18n" data-fa="خبره">Expert</span></div>
-        <div class="skill-row"><span class="skill-name i18n" data-fa="برنامه‌نویسی شبکه و ساکت">Network / Socket Programming</span><span class="level level-expert i18n" data-fa="خبره">Expert</span></div>
-      </div>
-
-      <div class="skill-card">
-        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></span> <span class="i18n" data-fa="امنیت و شبکه">Security &amp; Networking</span></h3>
-        <div class="skill-row"><span class="skill-name i18n" data-fa="رمزنگاری">Cryptography</span><span class="level level-advanced i18n" data-fa="پیشرفته">Advanced</span></div>
-        <div class="skill-row"><span class="skill-name i18n" data-fa="اتصالات امن">Secure Connections</span><span class="level level-advanced i18n" data-fa="پیشرفته">Advanced</span></div>
-        <div class="skill-row"><span class="skill-name i18n" data-fa="تحلیل پروتکل">Protocol Analysis</span><span class="level level-advanced i18n" data-fa="پیشرفته">Advanced</span></div>
-      </div>
-
-      <div class="skill-card">
-        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><line x1="9" y1="2" x2="9" y2="6"/><line x1="15" y1="2" x2="15" y2="6"/><line x1="9" y1="18" x2="9" y2="22"/><line x1="15" y1="18" x2="15" y2="22"/><line x1="2" y1="9" x2="6" y2="9"/><line x1="2" y1="15" x2="6" y2="15"/><line x1="18" y1="9" x2="22" y2="9"/><line x1="18" y1="15" x2="22" y2="15"/></svg></span> <span class="i18n" data-fa="هوش مصنوعی و اتوماسیون">AI &amp; Automation</span></h3>
-        <div class="skill-row"><span class="skill-name i18n" data-fa="اتوماسیون گردش‌کار با n8n">n8n Workflow Automation</span><span class="level level-advanced i18n" data-fa="پیشرفته">Advanced</span></div>
-        <div class="skill-row"><span class="skill-name i18n" data-fa="LLM و هوش مصنوعی مولد">LLM / GenAI</span><span class="level level-advanced i18n" data-fa="پیشرفته">Advanced</span></div>
-        <div class="skill-row"><span class="skill-name i18n" data-fa="یادگیری ماشین (کلاسیک)">Machine Learning (classical)</span><span class="level level-intermediate i18n" data-fa="متوسط">Intermediate</span></div>
-      </div>
-
-      <div class="skill-card">
-        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="6 9 10 12 6 15"/><line x1="12" y1="15" x2="16" y2="15"/></svg></span> <span class="i18n" data-fa="DevOps و وب مدرن">DevOps &amp; Modern Web</span></h3>
-        <div class="skill-row"><span class="skill-name">Docker / Kubernetes</span><span class="level level-advanced i18n" data-fa="پیشرفته">Advanced</span></div>
-        <div class="skill-row"><span class="skill-name">Git / CI‑CD (Jenkins)</span><span class="level level-expert i18n" data-fa="خبره">Expert</span></div>
-        <div class="skill-row"><span class="skill-name">Node.js · Next.js · Prisma</span><span class="level level-familiar i18n" data-fa="آشنا (خودآموز)">Familiar (self‑taught)</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="focus">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-tag i18n" data-fa="چه می‌سازم">What I Build</span>
-      <h2 class="section-title i18n" data-fa="حوزه‌های تمرکز">Focus Areas</h2>
-    </div>
-    <div class="focus-grid reveal-stagger">
-      <div class="focus-card">
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>
-        <h3 class="i18n" data-fa="سیستم‌های بانکی و پرداخت">Banking &amp; Payment Systems</h3>
-        <p class="i18n" data-fa="نرم‌افزار ATM، سوییچ‌های تراکنشی مبتنی بر ISO 8583 و پلتفرم‌های مبتنی بر WOSA/XFS برای محیط‌های مالی پرحجم.">ATM software, ISO 8583 transaction switches, and WOSA/XFS based platforms for high‑volume financial environments.</p>
-      </div>
-      <div class="focus-card">
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
-        <h3 class="i18n" data-fa="میکروسرویس‌های جاوا و سیستم‌های بک‌اند">Java Microservices &amp; Backend Systems</h3>
-        <p class="i18n" data-fa="طراحی و توسعه‌ی ساب‌سیستم‌های بک‌اند جاوا/اسپرینگ بوت و یکپارچه‌سازی سرویس‌های داخلی برای بک‌آفیس سوییچ بانکی، همراه با کار عمیق در لایه‌ی داده با JPA و Oracle.">Designing and evolving Java/Spring Boot backend subsystems and internal service integrations for a bank's switch back office, with deep JPA &amp; Oracle data‑layer work.</p>
-      </div>
-      <div class="focus-card">
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></span>
-        <h3 class="i18n" data-fa="برنامه‌نویسی سیستمی و امنیت">Systems Programming &amp; Security</h3>
-        <p class="i18n" data-fa="برنامه‌نویسی C/C++ و Qt برای ATM و دستگاه‌ها، به‌همراه اصول امنیت شبکه، رمزنگاری و تحلیل پروتکل.">C/C++ and Qt‑based device/ATM programming, plus network security, cryptography, and protocol‑level fundamentals.</p>
-      </div>
-      <div class="focus-card">
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></span>
-        <h3 class="i18n" data-fa="سیستم‌های Event-Driven و یادگیری ماشین کاربردی">Event‑Driven Systems &amp; Applied ML</h3>
-        <p class="i18n" data-fa="آشنایی کاری با Kafka و الگوهای event-driven، در کنار یادگیری ماشین کلاسیک برای ویژگی‌های داده‌محور.">Working knowledge of Kafka and event‑driven patterns alongside classical machine learning for data‑driven features.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="education">
-  <div class="container">
-    <div class="two-col">
-      <div class="reveal">
-        <h3 class="sub-title"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span> <span class="i18n" data-fa="تحصیلات">Education</span></h3>
-        <div class="edu-item">
-          <div class="degree i18n" data-fa="کارشناسی ارشد مهندسی کامپیوتر (سخت‌افزار و نرم‌افزار)">MSc, Computer Engineering (Hardware &amp; Software)</div>
-          <div class="school i18n" data-fa="واحد علوم و تحقیقات — تهران، ایران">Science and Research Branch — Tehran, Iran</div>
-          <div class="period i18n" data-fa="۲۰۱۶ — ۲۰۱۸">2016 — 2018</div>
-        </div>
-        <div class="edu-item">
-          <div class="degree i18n" data-fa="کارشناسی مهندسی کامپیوتر (سخت‌افزار و نرم‌افزار)">BSc, Computer Engineering (Hardware &amp; Software)</div>
-          <div class="school i18n" data-fa="دانشگاه صنعتی همدان — همدان، ایران">Hamadan University of Technology — Hamadan, Iran</div>
-          <div class="period i18n" data-fa="۲۰۰۷ — ۲۰۱۲">2007 — 2012</div>
-        </div>
-
-        <h3 class="sub-title" style="margin-top:48px;"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"/></svg></span> <span class="i18n" data-fa="زبان‌ها">Languages</span></h3>
-        <div class="lang-grid">
-          <div class="lang-card"><div class="lname i18n" data-fa="فارسی">Persian</div><div class="llevel i18n" data-fa="زبان مادری">Native</div></div>
-          <div class="lang-card"><div class="lname i18n" data-fa="انگلیسی">English</div><div class="llevel i18n" data-fa="پیشرفته متوسط">Upper‑Intermediate</div></div>
-          <div class="lang-card"><div class="lname i18n" data-fa="آلمانی">German</div><div class="llevel i18n" data-fa="مقدماتی">Pre‑Intermediate</div></div>
-        </div>
-      </div>
-
-      <div class="reveal">
-        <h3 class="sub-title"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><polyline points="8.5 13 7 22 12 19 17 22 15.5 13"/></svg></span> <span class="i18n" data-fa="گواهینامه‌ها">Certificates</span></h3>
-        <div class="cert-list">
-          <div class="cert-item">
-            <div><div class="cname i18n" data-fa="دوره پیشرفته Java Spring">Java Spring Advanced Learnings</div><div class="cissuer">TOSAN</div></div>
-            <div class="cyear">2020</div>
-          </div>
-          <div class="cert-item">
-            <div><div class="cname">CEH — Certified Ethical Hacker</div><div class="cissuer i18n" data-fa="Intelligence Processing، ایران">Intelligence Processing, Iran</div></div>
-            <div class="cyear">2016</div>
-          </div>
-          <div class="cert-item">
-            <div><div class="cname">MTCNA — MikroTik Certified Network Associate</div><div class="cissuer i18n" data-fa="Rahin Co، ایران">Rahin Co, Iran</div></div>
-            <div class="cyear">2014</div>
-          </div>
-          <div class="cert-item">
-            <div><div class="cname">Network+</div><div class="cissuer i18n" data-fa="سازمان فنی و حرفه‌ای همدان، ایران">Hamadan Technical &amp; Vocational Training Org., Iran</div></div>
-            <div class="cyear">2010</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="contact-box reveal">
-      <div class="avatar-ring"><img src="nasser-photo.jpg" alt="Nasser Allahdadi" loading="lazy"></div>
-      <h2 class="i18n" data-fa="بیایید با هم چیز فوق‌العاده‌ای بسازیم">Let's build something great together</h2>
-      <p class="i18n" data-fa="آماده‌ی همکاری در حوزه‌ی مهندسی بک‌اند جاوا و فین‌تک هستم. خوشحال می‌شوم باهام در تماس باشید — معمولاً ظرف یک روز پاسخ می‌دهم.">Open to Java backend engineering and fintech opportunities. Feel free to reach out — I usually reply within a day.</p>
-      <div class="contact-links">
-        <a href="mailto:n.allahdadi@outlook.com" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2 6 12 13 22 6"/></svg> <span dir="ltr">n.allahdadi@outlook.com</span></a>
-        <a href="tel:+989301123585" class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg> <span dir="ltr">+98 930 112 3585</span></a>
-        <a href="https://www.linkedin.com/in/nallahdadi" target="_blank" rel="noopener" class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="10" x2="8" y2="16"/><circle cx="8" cy="7" r="1"/><path d="M12 16v-3.5a2.5 2.5 0 0 1 5 0V16"/><line x1="12" y1="10" x2="12" y2="16"/></svg> LinkedIn</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    &copy; <span id="year"></span> Nasser Allahdadi · <span class="i18n" data-fa='با دقت و رنگ مشکی و نارنجی ساخته شده. میزبانی‌شده روی <a href="https://github.com/nallahdadi/nallahdadi.github.io" target="_blank" rel="noopener">GitHub Pages</a>.'>Built with care, black &amp; orange. Hosted on <a href="https://github.com/nallahdadi/nallahdadi.github.io" target="_blank" rel="noopener">GitHub Pages</a>.</span>
-  </div>
-</footer>
-
-<a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></a>
-
+    <div class="arch-visual"><div class="arch-caption"><span data-i18n="archHeading">// CONCEPTUAL HYBRID SYSTEM VIEW</span><span>NOT A PRODUCTION TOPOLOGY</span></div><div class="flow-layout"><div class="flow-node"><span class="small">01 / SOURCE</span><b data-i18n="flow1">Existing Switch Schema</b><em>ORACLE</em></div><div class="flow-arrow">⟶</div><div class="flow-node"><span class="small">02 / CORE</span><b data-i18n="flow2">Management &amp; Domain Logic</b><em>JAVA / JPA</em></div><div class="flow-arrow">⟶</div><div class="flow-node indigo"><span class="small">03 / EVENTS</span><b data-i18n="flow3">Reporting &amp; Offline Services</b><em>KAFKA / SPRING</em></div></div><p class="flow-explain" data-i18n="archFoot">Illustrative architectural relationship only. Internal service boundaries and production infrastructure are intentionally omitted.</p></div>
+  </section>
+  <section class="section" id="skills"><div class="section-top"><span class="section-kicker">$ cat expertise.json</span><span class="section-index">// 05</span></div><h2 data-i18n="skillsTitle">Technical Expertise</h2><p class="section-intro" data-i18n="skillsIntro">A toolset shaped by production constraints — architecture, application engineering, transaction processing and system diagnostics.</p>
+    <div class="skill-columns"><div class="skill-panel"><span class="cat-id">01 / ARCHITECTURE</span><h3 data-i18n="skillH1">Software &amp; Systems Architecture</h3><div class="skill-list"><span>Hybrid Architecture</span><span>Microservices</span><span>Modular Monolith</span><span>DDD</span><span>Event-Driven Design</span><span>Legacy Modernization</span></div></div><div class="skill-panel"><span class="cat-id">02 / BACKEND</span><h3 data-i18n="skillH2">Java &amp; Enterprise Backend</h3><div class="skill-list"><span>Java</span><span>Spring Boot</span><span>JPA / Hibernate</span><span>Oracle</span><span>Kafka</span><span>REST APIs</span><span>Data Modeling</span></div></div><div class="skill-panel"><span class="cat-id">03 / LOW LEVEL</span><h3 data-i18n="skillH3">C++ &amp; Banking Infrastructure</h3><div class="skill-list"><span>C++</span><span>Qt</span><span>Multithreading</span><span>TCP / Socket</span><span>ISO 8583</span><span>Pro*C</span><span>WOSA/XFS</span></div></div><div class="skill-panel"><span class="cat-id">04 / TOOLING</span><h3 data-i18n="skillH4">Diagnostics &amp; Technical Leadership</h3><div class="skill-list"><span>Valgrind</span><span>VS Diagnostics</span><span>Log Analysis</span><span>Code Review</span><span>Mentoring</span><span>Technical Design</span></div></div></div>
+  </section>
+  <section class="section" id="education"><div class="section-top"><span class="section-kicker">$ cat credentials.txt</span><span class="section-index">// 06</span></div><h2 data-i18n="eduTitle">Education &amp; Certifications</h2><p class="section-intro" data-i18n="eduIntro">Formal computer engineering education and selected professional training listed in the existing resume.</p><div class="edu-grid"><div class="edu-panel"><h3>// ACADEMIC BACKGROUND</h3><div class="edu-row"><b data-i18n="masters">MSc — Computer Engineering (Hardware &amp; Software)</b><span class="college" data-i18n="mscSchool">Science and Research Branch, Tehran</span><span class="year">2016 — 2018</span></div><div class="edu-row"><b data-i18n="bachelors">BSc — Computer Engineering (Hardware &amp; Software)</b><span class="college" data-i18n="bscSchool">Hamadan University of Technology</span><span class="year">2007 — 2012</span></div></div><div class="edu-panel"><h3>// SELECTED CREDENTIALS</h3><div class="cert-row"><b>Java Spring Advanced Training</b><span>2020</span></div><div class="cert-row"><b>CEH</b><span>2016</span></div><div class="cert-row"><b>MTCNA</b><span>2014</span></div><div class="cert-row"><b>Network+</b><span>2010</span></div><p class="honesty-note" data-i18n="credNote">Credential labels and issuers should be verified before publishing a final CV.</p></div></div>
+  </section>
+  <section class="section" id="contact"><div class="section-top"><span class="section-kicker">$ ./connect --professional</span><span class="section-index">// 07</span></div><div class="contact-panel"><div><span class="pre" data-i18n="contactPre">// CONNECTIONS WELCOME</span><h2 data-i18n="contactTitle">Let's talk software architecture.</h2><p data-i18n="contactText">Interested in engineering architecture, banking systems, or exchanging ideas about complex software? Connect via email, GitHub, or LinkedIn.</p></div><div class="contact-btns"><a class="btn primary" href="mailto:n.allahdadi@outlook.com"><span data-i18n="emailBtn">Send an email</span>↗</a><a class="btn secondary" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nallahdadi">LinkedIn ↗</a><a class="btn secondary" target="_blank" rel="noopener noreferrer" href="https://github.com/nallahdadi">GitHub ↗</a></div></div></section>
+  <footer class="footer"><span>© <span id="currentYear">2026</span> Nasser Allahdadi · <span data-i18n="footerText">Designed like a developer, built for the web.</span></span><span><em>●</em> <span data-i18n="footerPreview">PREVIEW — NOT PUBLISHED</span></span></footer>
+</main></div>
 <script>
-  // Language toggle (EN / FA)
-  (function(){
-    const i18nEls = document.querySelectorAll('.i18n');
-    i18nEls.forEach(el => { el.dataset.en = el.innerHTML; });
-    const langToggle = document.getElementById('langToggle');
-    const cvDownload = document.getElementById('cvDownload');
-
-    function applyLang(lang){
-      i18nEls.forEach(el => { el.innerHTML = lang === 'fa' ? el.dataset.fa : el.dataset.en; });
-      document.documentElement.lang = lang === 'fa' ? 'fa' : 'en';
-      document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
-      langToggle.textContent = lang === 'fa' ? 'EN' : 'FA';
-      cvDownload.href = lang === 'fa' ? 'Nasser_Allahdadi_Resume_FA.pdf' : 'Nasser_Allahdadi_Resume.pdf';
-      try { localStorage.setItem('site-lang', lang); } catch(e){}
-    }
-
-    let saved = 'en';
-    try { saved = localStorage.getItem('site-lang') || 'en'; } catch(e){}
-    applyLang(saved);
-
-    langToggle.addEventListener('click', () => {
-      const next = document.documentElement.lang === 'fa' ? 'en' : 'fa';
-      applyLang(next);
-      document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('show'));
-    });
-  })();
-
-  // Mobile nav toggle
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-  // Active link on scroll + back to top button
-  const sections = document.querySelectorAll('section[id]');
-  const navAnchors = document.querySelectorAll('.nav-links a');
-  const backToTop = document.getElementById('backToTop');
-
-  function onScroll(){
-    let current = '';
-    sections.forEach(sec => {
-      const top = sec.offsetTop - 120;
-      if (window.scrollY >= top) current = sec.id;
-    });
-    navAnchors.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
-    backToTop.classList.toggle('show', window.scrollY > 600);
-  }
-  window.addEventListener('scroll', onScroll);
-  onScroll();
-
-  // Reveal on scroll
-  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting){
-        entry.target.classList.add('show');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
-
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Particle network background (hero only)
-  (function(){
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    const hero = document.querySelector('.hero');
-    let w, h, particles;
-    const mouse = { x: null, y: null, active: false };
-    const INFLUENCE = 160;
-
-    function resize(){
-      w = canvas.width = hero.offsetWidth;
-      h = canvas.height = hero.offsetHeight;
-    }
-
-    function initParticles(){
-      const count = Math.min(70, Math.floor(w / 20));
-      particles = Array.from({length: count}, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        r: Math.random() * 1.6 + 0.6
-      }));
-    }
-
-    hero.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-      mouse.active = true;
-    });
-    hero.addEventListener('mouseleave', () => { mouse.active = false; });
-
-    function step(){
-      ctx.clearRect(0, 0, w, h);
-      particles.forEach(p => {
-        if (mouse.active){
-          const dx = mouse.x - p.x, dy = mouse.y - p.y;
-          const dist = Math.sqrt(dx*dx + dy*dy) || 1;
-          if (dist < INFLUENCE){
-            const pull = (1 - dist / INFLUENCE) * 0.035;
-            p.vx += (dx / dist) * pull;
-            p.vy += (dy / dist) * pull;
-          }
-        }
-        p.vx *= 0.985; p.vy *= 0.985;
-        const speed = Math.sqrt(p.vx*p.vx + p.vy*p.vy);
-        const maxSpeed = 1.4;
-        if (speed > maxSpeed){ p.vx = (p.vx / speed) * maxSpeed; p.vy = (p.vy / speed) * maxSpeed; }
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > w) p.vx *= -1;
-        if (p.y < 0 || p.y > h) p.vy *= -1;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255,122,26,0.6)';
-        ctx.fill();
-      });
-      for (let i = 0; i < particles.length; i++){
-        for (let j = i + 1; j < particles.length; j++){
-          const a = particles[i], b = particles[j];
-          const dx = a.x - b.x, dy = a.y - b.y;
-          const dist = Math.sqrt(dx*dx + dy*dy);
-          if (dist < 130){
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = 'rgba(255,122,26,' + (0.18 * (1 - dist/130)) + ')';
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-        if (mouse.active){
-          const dx = mouse.x - particles[i].x, dy = mouse.y - particles[i].y;
-          const dist = Math.sqrt(dx*dx + dy*dy);
-          if (dist < INFLUENCE){
-            ctx.beginPath();
-            ctx.moveTo(mouse.x, mouse.y);
-            ctx.lineTo(particles[i].x, particles[i].y);
-            ctx.strokeStyle = 'rgba(255,171,92,' + (0.35 * (1 - dist/INFLUENCE)) + ')';
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-      }
-      requestAnimationFrame(step);
-    }
-
-    resize();
-    initParticles();
-    step();
-    window.addEventListener('resize', () => { resize(); initParticles(); });
-  })();
+(()=>{
+  'use strict';
+  const fa={
+    skip:'رفتن به محتوای اصلی',menuHeading:'فهرست',navHome:'~/خانه',navAbout:'~/درباره-من',navExperience:'~/سوابق-کاری',navProjects:'~/مطالعات-موردی',navSkills:'~/تخصص‌ها',navEducation:'~/تحصیلات',navContact:'~/ارتباط',sideFocus:'تمرکز: سامانه‌های عملیاتی',sideText:'معماری واقع‌گرا، توسعه قابل‌اتکا و مواجهه با محدودیت‌های واقعی بانکداری.',breadcrumb:'پورتفولیو',overview:'نمای کلی',available:'نسخه نمایشی سایت',heroLabel:'طراحی سامانه‌هایی که ماندگارند',hero1:'معمار',hero2:'نرم‌افزار.',hero3:'راهبر فنی.',heroDesc:'طراحی و تکامل سیستم‌های پیچیده در نقطه اتصال بانکداری، پردازش پرداخت و معماری مدرن بک‌اند؛ از توسعه سطح پایین با ++C تا پلتفرم‌های Java در محیط عملیاتی.',heroTag:'// معماری متناسب با دنیای واقعی',explore:'مطالعات موردی',contactCta:'ارتباط با من',terminalHint:'↵ با Enter حرکت کن؛ هیچ دستور سیستمی اجرا نمی‌شود',metric1:'سال تجربه مهندسی نرم‌افزار',metric2:'محیط عملیاتی بانکی',metric3:'مطالعه موردی مهندسی',aboutTitle:'فقط کدنویسی نه؛ طراحی سیستمی که پشت آن است.',aboutIntro:'تجربه فنی از معماری بک‌اند و برنامه‌نویسی سیستمی تا چالش‌های واقعی راهبری سامانه‌های بانکی.',aboutP1:'بیش از ۱۴ سال تجربه در حوزه <strong>بانکداری، پرداخت و نرم‌افزارهای شبکه</strong> دارم. در دو سوی سامانه تراکنشی فعالیت کرده‌ام: اجزای سوئیچ بانکی با ++C و پلتفرم‌های مدیریتی با Java و Spring Boot.',aboutP2:'نگاه من به معماری <strong>واقع‌گرایانه</strong> است؛ حفظ سازگاری با اسکیمای دیتابیس و قراردادهای ارتباطی موجود، در کنار تفکیک وظایفی مثل گزارش‌گیری و پردازش زمان‌بندی‌شده در صورت نیاز واقعی.',aboutP3:'پیاده‌سازی عملی را با <strong>تحلیل نیازمندی‌ها، مدل‌سازی دیتابیس، Code Review و هدایت فنی تیم‌های کوچک</strong> ترکیب می‌کنم. حل مشکلات سخت محیط عملیاتی و ساخت ابزارهای عیب‌یابی را هم دوست دارم.',focus1Title:'معماری واقع‌گرا',focus1Desc:'معماری Hybrid، یکپارچه‌سازی سامانه‌های قدیمی، مدل‌سازی دامنه و پردازش رویدادمحور.',focus2Title:'عمق مهندسی سیستم',focus2Desc:'++C، سوکت، پروتکل‌های پرداخت، هم‌زمانی و تحلیل عملکرد.',focus3Title:'مالکیت فنی',focus3Desc:'تصمیم معماری، استانداردهای مهندسی، بازبینی کد و هدایت توسعه‌دهندگان.',experienceTitle:'سوابق حرفه‌ای',experienceIntro:'مسیر حرفه‌ای از سیستم‌های شبکه تا توسعه سوئیچ بانکی و مسئولیت معماری بک‌آفیس سازمانی.',present:'اکنون',tosanRecentTitle:'تمرکز سال‌های اخیر — معماری و راهبری فنی',stageNote:'دوره‌ها بر اساس مسئولیت جدا شده‌اند؛ تاریخ رسمی ارتقا هنوز تأیید نشده است.',tosanR1:'هدایت طراحی و پیاده‌سازی پلتفرم بک‌آفیس سوئیچ بانکی که در حداقل پنج محیط عملیاتی بانک استفاده شده است.',tosanR2:'طراحی معماری Hybrid متناسب با اسکیماهای موجود Oracle و ایجاد سرویس‌های مستقل گزارش‌گیری و زمان‌بندی.',tosanR3:'طراحی مدل‌های پیچیده JPA، ثبت رویداد تغییرات و ارتباط چند دیتاسورس؛ هدایت ۱ تا ۳ توسعه‌دهنده در تقسیم کار و بازبینی کد.',tosanEarlierTitle:'تمرکز دوره‌های پیشین — توسعه نرم‌افزار و عیب‌یابی',tosanE1:'توسعه نرم‌افزارهای بانکداری و خودپرداز، شامل مهندسی ++C/Qt و رفع اشکال سامانه‌های عملیاتی.',tosanE2:'ساخت ابزار گرافیکی تحلیل لاگ برای نمایش وضعیت ATM و مصرف حافظه/پردازنده؛ بررسی نشت حافظه با Valgrind و ابزارهای Visual Studio.',infotechTitle:'توسعه سوئیچ پرداخت با ++C',infotech1:'تبدیل ارتباط ماژول‌های موجود سوئیچ از Pipe به TCP Socket با ISO 8583 برای امکان استقرار روی سرورهای جداگانه.',infotech2:'افزودن ماژول مدیریت قبوض برای استعلام، پرداخت و جلوگیری از پرداخت مجدد با ISO 8583 و MTI 0100.',infotech3:'کار با Oracle و Pro*C در بستر سوئیچ عملیاتی موجود.',intelligenceTitle:'مهندسی نرم‌افزار شبکه و ارتباطات امن',intelligence1:'هدایت تیم‌های توسعه نرم‌افزار و ارتباطات امن.',intelligence2:'توسعه نرم‌افزارهای شبکه شامل رمزنگاری، تحلیل پروتکل و سیستم‌های چندنخی.',casesTitle:'مطالعات موردی مهندسی',casesIntro:'چالش‌های منتخب مهندسی با نام‌های عمومی و توضیحات غیرمحرمانه.',case1Title:'معماری بک‌آفیس سوئیچ بانکی',case1Desc:'معماری Hybrid که وابستگی بخش‌های مدیریتی به اسکیمای موجود را با سرویس‌های مستقل گزارش‌گیری و زمان‌بندی متعادل می‌کند.',readNotes:'مشاهده جزئیات فنی',case1Notes:'<strong>چالش:</strong> وابستگی ماژول‌های مدیریتی به اسکیماهای موجود سوئیچ. <strong>راهکار:</strong> حفظ بخش‌های وابسته به اسکیما در هسته و تفکیک گزارش‌گیری، پردازش آفلاین و زمان‌بندی؛ انتقال رویدادهای تراکنش با Kafka؛ مدل‌سازی چندسطحی شروط مسیریابی با JPA، دیتاسورس‌های متعدد و ثبت رویداد هنگام Restore. <strong>بستر:</strong> حداقل پنج محیط عملیاتی بانک.',case2Title:'نوسازی سوئیچ پرداخت',case2Desc:'تبدیل ارتباط مبتنی بر Pipe به Socket برای استقرار توزیع‌شده و توسعه ماژول جدید مدیریت قبوض.',case2Notes:'<strong>چالش:</strong> محدودیت ارتباط محلی Pipe برای استقرار ماژول‌ها. <strong>راهکار:</strong> انتقال ارتباطات به TCP Socket با ISO 8583 و افزودن ماژول چهارم برای استعلام، پرداخت و جلوگیری از پرداخت تکراری قبوض با سامانه خارجی. <strong>نتیجه:</strong> امکان اجرا روی سرورهای مجزا.',case3Title:'عیب‌یابی و مشاهده‌پذیری خودپرداز',case3Desc:'ابزار تحلیل گرافیکی مبتنی بر Qt برای لاگ، تغییر وضعیت ATM و نمودارهای مصرف حافظه و پردازنده در حین اجرا.',case3Notes:'<strong>چالش:</strong> فهم تغییرات مصرف حافظه و CPU در نقاط مختلف اجرای ATM. <strong>راهکار:</strong> ساخت نمایشگر گرافیکی لاگ با نمودارهای منابع و تغییرات وضعیت؛ استفاده از Valgrind و ابزارهای Visual Studio در کنار آن. <strong>هدف:</strong> تسهیل تشخیص نشت حافظه و خطاهای عملیاتی.',archHeading:'// نمای مفهومی معماری Hybrid',flow1:'اسکیمای موجود سوئیچ',flow2:'مدیریت و منطق دامنه',flow3:'گزارش‌گیری و سرویس‌های آفلاین',archFoot:'فقط نمای مفهومی است؛ مرز واقعی سرویس‌ها و جزئیات زیرساخت عملیاتی عمداً حذف شده‌اند.',skillsTitle:'تخصص‌های فنی',skillsIntro:'ابزارها و دانش شکل‌گرفته در مواجهه با معماری، توسعه نرم‌افزار، تراکنش بانکی و عیب‌یابی عملیاتی.',skillH1:'معماری نرم‌افزار و سیستم',skillH2:'جاوا و بک‌اند سازمانی',skillH3:'++C و زیرساخت بانکی',skillH4:'عیب‌یابی و راهبری فنی',eduTitle:'تحصیلات و گواهینامه‌ها',eduIntro:'تحصیلات مهندسی کامپیوتر و دوره‌های حرفه‌ای ثبت‌شده در رزومه قبلی.',masters:'کارشناسی ارشد مهندسی کامپیوتر (سخت‌افزار و نرم‌افزار)',mscSchool:'واحد علوم و تحقیقات، تهران',bachelors:'کارشناسی مهندسی کامپیوتر (سخت‌افزار و نرم‌افزار)',bscSchool:'دانشگاه صنعتی همدان',credNote:'عنوان و مرجع گواهینامه‌ها باید پیش از انتشار نسخه نهایی CV تأیید شوند.',contactPre:'// آماده ارتباط حرفه‌ای',contactTitle:'درباره معماری نرم‌افزار گفتگو کنیم.',contactText:'برای تبادل نظر درباره معماری سیستم، سامانه‌های بانکی یا مسائل پیچیده مهندسی از طریق ایمیل، گیت‌هاب یا لینکدین ارتباط بگیر.',emailBtn:'ارسال ایمیل',footerText:'با نگاه یک توسعه‌دهنده، برای وب طراحی شده است.',footerPreview:'پیش‌نمایش — هنوز منتشر نشده'};
+  const original=new Map();document.querySelectorAll('[data-i18n]').forEach(el=>original.set(el,el.innerHTML));
+  let lang='en';try{lang=localStorage.getItem('terminal-portfolio-language')==='fa'?'fa':'en'}catch(e){}
+  function setLang(next){lang=next;document.documentElement.lang=next;document.documentElement.dir=next==='fa'?'rtl':'ltr';document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n');if(next==='fa'&&fa[key])el.innerHTML=fa[key];else el.innerHTML=original.get(el)});document.getElementById('langBtn').textContent=next==='en'?'FA / فارسی':'EN / English';document.getElementById('termInput').placeholder=next==='fa'?'help یا projects':'help';try{localStorage.setItem('terminal-portfolio-language',next)}catch(e){}}
+  document.getElementById('langBtn').addEventListener('click',()=>setLang(lang==='en'?'fa':'en'));setLang(lang);
+  document.getElementById('currentYear').textContent=String(new Date().getFullYear());
+  const menu=document.getElementById('menuBtn'),side=document.getElementById('sidebar'),overlay=document.getElementById('overlay');
+  function closeMenu(){side.classList.remove('open');overlay.classList.remove('show');menu.setAttribute('aria-expanded','false')}
+  menu.addEventListener('click',()=>{const open=!side.classList.contains('open');side.classList.toggle('open',open);overlay.classList.toggle('show',open);menu.setAttribute('aria-expanded',String(open))});overlay.addEventListener('click',closeMenu);document.querySelectorAll('.nav-link').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+  const links=[...document.querySelectorAll('.nav-link')],sections=[...document.querySelectorAll('main section[id]')];
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id))}})},{rootMargin:'-25% 0px -62% 0px',threshold:0});sections.forEach(s=>io.observe(s))}
+  const output=document.getElementById('termOutput'),form=document.getElementById('termForm'),field=document.getElementById('termInput');
+  function terminalLine(txt,cls){const div=document.createElement('div');div.className=cls;div.textContent=txt;output.append(div);output.scrollTop=output.scrollHeight}
+  const map={about:'#about',experience:'#experience',career:'#experience',projects:'#projects',cases:'#projects',skills:'#skills',education:'#education',contact:'#contact',home:'#home'};
+  form.addEventListener('submit',event=>{event.preventDefault();const raw=field.value.trim();field.value='';if(!raw)return;terminalLine('❯ '+raw,'term-command');const parts=raw.toLowerCase().split(/\s+/),cmd=parts[0];if(cmd==='help'){terminalLine('Available: help · about · experience · projects · skills · education · contact · home · lang fa · lang en · clear','term-result')}else if(cmd==='clear'){output.replaceChildren()}else if(cmd==='lang'&&(parts[1]==='fa'||parts[1]==='en')){setLang(parts[1]);terminalLine('Language switched to '+parts[1].toUpperCase(),'term-result')}else if(map[cmd]){terminalLine('↳ Opening '+cmd+' ...','term-result');document.querySelector(map[cmd]).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}else{terminalLine('Command not found. Type help for available commands.','term-result')}});
+})();
 </script>
-
 </body>
 </html>
